@@ -1,8 +1,7 @@
 # Halma
 
 [![Build Status](https://travis-ci.org/Crazy-Marvin/Halma.svg?branch=master)](https://travis-ci.org/Crazy-Marvin/Halma)
-[![Build Status Windows](https://ci.appveyor.com/api/projects/status/396bv7ip7wqaovj4?svg=true)](https://ci.appveyor.com/project/CrazyMarvin/halma)
-[![Build Status Mobile](https://www.bitrise.io/app/8f6185ceb680e8ce/status.svg?token=HrXGS39MqzKvuIW___qG2A)](https://www.bitrise.io/app/8f6185ceb680e8ce)
+[![Build Status](https://dev.azure.com/Crazy-Marvin/marvin/_apis/build/status/Crazy-Marvin.Halma)](https://dev.azure.com/Crazy-Marvin/marvin/_build/latest?definitionId=2)
 [![License](https://img.shields.io/github/license/Crazy-Marvin/Halma.svg)](LICENSE.txt)
 [![Last commit](https://img.shields.io/github/last-commit/Crazy-Marvin/Halma.svg)](https://github.com/Crazy-Marvin/Halma/)
 [![Releases](https://img.shields.io/github/downloads/Crazy-Marvin/Halma/total.svg)](https://github.com/Crazy-Marvin/Halma/releases)
