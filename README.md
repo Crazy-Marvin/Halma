@@ -8,4 +8,4 @@
 [![codecov](https://codecov.io/gh/Crazy-Marvin/Halma/branch/master/graph/badge.svg)](https://codecov.io/gh/Crazy-Marvin/Halma)
 
 
-Halma Game Built With The Awesome Godot Engine
+Halma Game Built With The Awesome libGDX Framework
