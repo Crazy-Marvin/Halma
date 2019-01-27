@@ -3,11 +3,14 @@ package com.halma.game.gameobjects;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.math.Vector2;
 import com.halma.game.Handler;
 import com.halma.game.utils.Controls;
+import com.halma.game.utils.Triangle;
+
+import org.omg.CORBA.Bounds;
 
 public class Piece extends GameObject {
-
     enum PieceState {
         SELECTED,
         NOT_SELECTED
@@ -19,6 +22,8 @@ public class Piece extends GameObject {
     private boolean isDown;
     private Sprite sprite;
     private Texture texture;
+
+    private Triangle triangle;
 
     public Piece(Handler handler, int x, int y, String color, Texture texture) {
         super(handler, x, y);
@@ -35,6 +40,7 @@ public class Piece extends GameObject {
         sprite = new Sprite(texture);
         sprite.setSize(sprite.getWidth()*scale, sprite.getHeight()*scale);
         isDown = false;
+        triangle = new Triangle(new Vector2(sprite.getX(), sprite.getY()), new Vector2(sprite.getX()+sprite.getBoundingRectangle().width/2, sprite.getY()+sprite.getBoundingRectangle().height), new Vector2(sprite.getX()+sprite.getBoundingRectangle().width, sprite.getY()));
         //System.out.println("System: " + sprite.getBoundingRectangle().x + ", " + sprite.getBoundingRectangle().y + ", " + (sprite.getBoundingRectangle().width + sprite.getBoundingRectangle().x) + ", " + (sprite.getBoundingRectangle().height + sprite.getBoundingRectangle().y));
     }
 
@@ -42,6 +48,7 @@ public class Piece extends GameObject {
     public void update(float dt) {
         sprite.setX(x*21.24f+95);
         sprite.setY(y*36.7f+6);
+        triangle.move(sprite.getX(), sprite.getY());
         select();
         move();
         if (isDown) {sprite.setTexture(handler.getGameState().getRedPieceDownImg());}
@@ -61,7 +68,7 @@ public class Piece extends GameObject {
     //Other methods
     public void select() {
         //System.out.println("System: " + sprite.getBoundingRectangle().x + ", " + sprite.getBoundingRectangle().y + ", " + sprite.getBoundingRectangle().width + ", " + sprite.getBoundingRectangle().height);
-        if (state == PieceState.NOT_SELECTED && sprite.getBoundingRectangle().contains(Controls.x, Controls.y)) {
+        if (state == PieceState.NOT_SELECTED && triangle.contains(Controls.x, Controls.y)) {//sprite.getBoundingRectangle().contains(Controls.x, Controls.y)) {
             state = PieceState.SELECTED;
             System.out.println("Piece changed to selected state.");
         }
