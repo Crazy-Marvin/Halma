@@ -81,7 +81,7 @@ public class Piece extends GameObject {
                 state = PieceState.NOT_SELECTED;
                 board.setBoard(x, y, null);
                 x++;
-                board.setBoard(x, y, this);
+                //board.setBoard(x, y, this);
                 isDown = !isDown;
                 sprite.setTexture(handler.getGameState().getRedPieceDownImg());
                 System.out.println("Piece changed to selected state 111.");
@@ -91,7 +91,7 @@ public class Piece extends GameObject {
                 state = PieceState.NOT_SELECTED;
                 board.setBoard(x, y, null);
                 x--;
-                board.setBoard(x, y, this);
+                //board.setBoard(x, y, this);
                 isDown = !isDown;
                 System.out.println("Piece changed to selected state 111.");
             }
@@ -100,7 +100,7 @@ public class Piece extends GameObject {
                 state = PieceState.NOT_SELECTED;
                 board.setBoard(x, y, null);
                 y++;
-                board.setBoard(x, y, this);
+                //board.setBoard(x, y, this);
                 isDown = !isDown;
                 System.out.println("Piece changed to selected state 111.");
             }
@@ -109,7 +109,7 @@ public class Piece extends GameObject {
                 state = PieceState.NOT_SELECTED;
                 board.setBoard(x, y, null);
                 y--;
-                board.setBoard(x, y, this);
+                //board.setBoard(x, y, this);
                 isDown = !isDown;
                 System.out.println("Piece changed to selected state 111.");
             }

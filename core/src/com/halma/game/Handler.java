@@ -2,6 +2,7 @@ package com.halma.game;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.halma.game.states.*;
+import com.halma.game.utils.Assets;
 import com.halma.game.utils.Controls;
 
 public class Handler {
@@ -18,6 +19,8 @@ public class Handler {
 
     // Main methods
     public void init() {
+        Assets.init();
+
         gameState = new GameState(this);
         State.setCurrentState(gameState);
         State.getCurrentState().init();
@@ -38,6 +41,7 @@ public class Handler {
 
     public void dispose() {
         gameState.dispose();
+        Assets.dispose();
     }
 
     // Other methods

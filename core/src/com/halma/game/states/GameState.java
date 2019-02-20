@@ -34,14 +34,14 @@ public class GameState extends State {
 
         board = new Board(handler, 0 ,0);
 
-        redPiece = new Piece(handler, 11, 15, "Red", redPieceUpImg);
-        board.setBoard(redPiece.getX(), redPiece.getY(),redPiece);
+        //redPiece = new Piece(handler, 11, 15, "Red", redPieceUpImg);
+        //board.setBoard(redPiece.getX(), redPiece.getY(),redPiece);
     }
 
     // Main methods
     @Override
     public void update(float dt) {
-        redPiece.update(dt);
+        //redPiece.update(dt);
         board.update(dt);
     }
 

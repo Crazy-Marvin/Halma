@@ -5,7 +5,7 @@ import com.halma.game.Handler;
 
 public class Board extends GameObject {
 
-    private Piece[][] board;
+    private BoardSpace[][] board;
 
     public Board(Handler handler, int x, int y) {
         super(handler, x, y);
@@ -13,13 +13,18 @@ public class Board extends GameObject {
     }
 
     public void init() {
-        board = new Piece[16][23];
+        board = new BoardSpace[17][13];
+        for (int j = 0; j < board.length; j++) {
+            for (int i = 0; i < board[j].length; i++) {
+                board[j][i] = new BoardSpace(handler, i, j);
+            }
+        }
     }
 
     @Override
     public void update(float dt) {
-        for (Piece[] b : board) {
-            for (Piece p : b) {
+        for (BoardSpace[] b : board) {
+            for (BoardSpace p : b) {
                 if (p != null) p.update(dt);
             }
         }
@@ -27,8 +32,8 @@ public class Board extends GameObject {
 
     @Override
     public void render(SpriteBatch batch) {
-        for (Piece[] b : board) {
-            for (Piece p : b) {
+        for (BoardSpace[] b : board) {
+            for (BoardSpace p : b) {
                 if (p != null) p.render(batch);
             }
         }
@@ -40,8 +45,8 @@ public class Board extends GameObject {
     }
 
     // Getters and Setters
-    public Piece[][] getBoard() {return board;}
+    public BoardSpace[][] getBoard() {return board;}
 
-    public void setBoard(int x, int y, Piece p) {board[y][x] = p;}
+    public void setBoard(int x, int y, BoardSpace p) {board[y][x] = p;}
 
 }
