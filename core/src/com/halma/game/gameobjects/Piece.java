@@ -51,8 +51,8 @@ public class Piece extends GameObject {
         triangle.move(sprite.getX(), sprite.getY());
         select();
         move();
-        if (isDown) {sprite.setTexture(handler.getGameState().getRedPieceDownImg());}
-        else {sprite.setTexture(handler.getGameState().getRedPieceUpImg());}
+        //if (isDown) {sprite.setTexture(handler.getGameState().getRedPieceDownImg());}
+        //else {sprite.setTexture(handler.getGameState().getRedPieceUpImg());}
     }
 
     @Override
@@ -83,7 +83,7 @@ public class Piece extends GameObject {
                 x++;
                 //board.setBoard(x, y, this);
                 isDown = !isDown;
-                sprite.setTexture(handler.getGameState().getRedPieceDownImg());
+                //sprite.setTexture(handler.getGameState().getRedPieceDownImg());
                 System.out.println("Piece changed to selected state 111.");
             }
             //move left
