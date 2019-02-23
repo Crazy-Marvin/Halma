@@ -9,10 +9,10 @@ import com.halma.game.Handler;
 public class Board extends GameObject {
 
     private BoardSpace[][] board;
+    private BoardPiece[] redPieces;
 
     public Board(Handler handler, int x, int y) {
         super(handler, x, y);
-        init();
     }
 
     public void init() {
@@ -30,13 +30,23 @@ public class Board extends GameObject {
         }
 
         board = new BoardSpace[17][13];
+        redPieces = new BoardPiece[10];
 
         //Create the game board.
         for (int j = 0; j < board.length; j++) {
             for (int i = 0; i < board[j].length; i++) {
-                boolean isReal = (b[j][i].contains("1"));
+                boolean isReal = !(b[j][i].contains("0"));
 
                 board[j][i] = new BoardSpace(handler, i, j, isReal);
+
+                if (b[j][i].contains("2")) {
+                    for (int k = 0; k < redPieces.length; k++) {
+                        if (redPieces[k] == null) {
+                            redPieces[k] = new BoardPiece(handler, i, j, 2);
+                            break;
+                        }
+                    }
+                }
             }
         }
 
@@ -49,6 +59,9 @@ public class Board extends GameObject {
                 if (p != null) p.update(dt);
             }
         }
+        for (BoardPiece p : redPieces) {
+            if (p != null) p.update(dt);
+        }
     }
 
     @Override
@@ -58,16 +71,33 @@ public class Board extends GameObject {
                 if (p != null) p.render(batch);
             }
         }
+        for (BoardPiece p : redPieces) {
+            if (p != null) p.render(batch);
+        }
     }
 
     @Override
     public void dispose() {
-
+        if (board != null) {
+            for (BoardSpace[] b : board) {
+                for (BoardSpace bs : b) {
+                    if (bs != null) bs.dispose();
+                }
+            }
+        }
+        if (redPieces != null) {
+            for (BoardPiece p : redPieces) {
+                if (p != null) p.dispose();
+            }
+        }
     }
 
     // Getters and Setters
     public BoardSpace[][] getBoard() {return board;}
+    public BoardSpace getBoardSpace(int x, int y) {return board[y][x];}
+    public BoardPiece[] getRedPieces() {return redPieces;}
 
     public void setBoard(int x, int y, BoardSpace p) {board[y][x] = p;}
+    public void setRedPieces(int i, BoardPiece p) {redPieces[i] = p;}
 
 }

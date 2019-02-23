@@ -10,6 +10,8 @@ import com.halma.game.utils.Controls;
 
 public class BoardPiece extends BoardSpace {
 
+    static int c = 0;
+
     enum BoardPiece_State {
         NOT_SELECTED,
         SELECTED
@@ -64,7 +66,6 @@ public class BoardPiece extends BoardSpace {
         if (state == BoardPiece_State.NOT_SELECTED) {
             if (Gdx.input.justTouched() && circle.contains(Controls.x, Controls.y)) {
                 state = BoardPiece_State.SELECTED;
-                System.out.println("Changed state of piece.");
             }
         }
     }
