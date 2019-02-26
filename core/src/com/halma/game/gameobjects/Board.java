@@ -9,7 +9,7 @@ import com.halma.game.Handler;
 public class Board extends GameObject {
 
     private BoardSpace[][] board;
-    private BoardPiece[] redPieces;
+    private BoardPiece[] redPieces, greenPieces, yellowPieces, bluePieces, purplePieces, skyBluePieces;
 
     public Board(Handler handler, int x, int y) {
         super(handler, x, y);
@@ -96,8 +96,11 @@ public class Board extends GameObject {
     public BoardSpace[][] getBoard() {return board;}
     public BoardSpace getBoardSpace(int x, int y) {return board[y][x];}
     public BoardPiece[] getRedPieces() {return redPieces;}
+    public BoardPiece[] getGreenPieces() {return greenPieces;}
+
 
     public void setBoard(int x, int y, BoardSpace p) {board[y][x] = p;}
     public void setRedPieces(int i, BoardPiece p) {redPieces[i] = p;}
+    public void setGreenPieces(int i, BoardPiece p) {greenPieces[i] = p;}
 
 }
