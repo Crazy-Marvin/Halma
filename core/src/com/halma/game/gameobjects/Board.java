@@ -31,6 +31,7 @@ public class Board extends GameObject {
 
         board = new BoardSpace[17][13];
         redPieces = new BoardPiece[10];
+        greenPieces = new BoardPiece[10];
 
         //Create the game board.
         for (int j = 0; j < board.length; j++) {
@@ -43,6 +44,14 @@ public class Board extends GameObject {
                     for (int k = 0; k < redPieces.length; k++) {
                         if (redPieces[k] == null) {
                             redPieces[k] = new BoardPiece(handler, i, j, 2);
+                            break;
+                        }
+                    }
+                }
+                if (b[j][i].contains("3")) {
+                    for (int k = 0; k < greenPieces.length; k++) {
+                        if (greenPieces[k] == null) {
+                            greenPieces[k] = new BoardPiece(handler, i, j, 3);
                             break;
                         }
                     }
@@ -62,6 +71,9 @@ public class Board extends GameObject {
         for (BoardPiece p : redPieces) {
             if (p != null) p.update(dt);
         }
+        for (BoardPiece p : greenPieces) {
+            if (p != null)  p.update(dt);
+        }
     }
 
     @Override
@@ -74,6 +86,9 @@ public class Board extends GameObject {
         for (BoardPiece p : redPieces) {
             if (p != null) p.render(batch);
         }
+        for (BoardPiece p : greenPieces) {
+            if (p != null) p.render(batch);
+        }
     }
 
     @Override
@@ -84,11 +99,19 @@ public class Board extends GameObject {
                     if (bs != null) bs.dispose();
                 }
             }
+            board = null;
         }
         if (redPieces != null) {
             for (BoardPiece p : redPieces) {
                 if (p != null) p.dispose();
             }
+            redPieces = null;
+        }
+        if (greenPieces != null) {
+            for (BoardPiece p : greenPieces) {
+                if (p != null) p.dispose();
+            }
+            greenPieces = null;
         }
     }
 

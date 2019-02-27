@@ -5,6 +5,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.halma.game.Handler;
 import com.halma.game.gameobjects.Board;
+import com.halma.game.utils.GameMaster;
 
 public class GameState extends State {
 

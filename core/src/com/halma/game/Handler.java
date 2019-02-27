@@ -4,6 +4,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.halma.game.states.*;
 import com.halma.game.utils.Assets;
 import com.halma.game.utils.Controls;
+import com.halma.game.utils.GameMaster;
 
 public class Handler {
 
@@ -19,6 +20,7 @@ public class Handler {
 
     // Main methods
     public void init() {
+        GameMaster.handler = this;
         Assets.init();
 
         gameState = new GameState(this);

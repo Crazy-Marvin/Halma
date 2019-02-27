@@ -7,6 +7,7 @@ import com.badlogic.gdx.math.Circle;
 import com.halma.game.Handler;
 import com.halma.game.utils.Assets;
 import com.halma.game.utils.Controls;
+import com.halma.game.utils.GameMaster;
 
 public class BoardPiece extends BoardSpace {
 
@@ -34,7 +35,8 @@ public class BoardPiece extends BoardSpace {
         board.getBoard()[y][x].setReal(false);
         if (state == null) {state = BoardPiece_State.NOT_SELECTED;}
         switch (type) {
-            case 2: color = "Red"; boardPieceImg = Assets.boardPiece_Red;
+            case 2: color = "Red"; boardPieceImg = Assets.boardPiece_Red; break;
+            case 3: color = "Green"; boardPieceImg = Assets.boardPiece_Green; break;
             default: color = "None";
         }
         updateDrawCoord();
@@ -64,8 +66,9 @@ public class BoardPiece extends BoardSpace {
     // Other Methods
     public void select() {
         if (state == BoardPiece_State.NOT_SELECTED) {
-            if (Gdx.input.justTouched() && circle.contains(Controls.x, Controls.y)) {
+            if (Gdx.input.justTouched() && circle.contains(Controls.x, Controls.y) && !GameMaster.isSelected()) {
                 state = BoardPiece_State.SELECTED;
+                GameMaster.setSelected(true);
             }
         }
     }
@@ -84,6 +87,7 @@ public class BoardPiece extends BoardSpace {
                             updateCircleCoord();
                             state = BoardPiece_State.NOT_SELECTED;
                             board.getBoard()[j][i].setReal(false);
+                            GameMaster.setSelected(false);
                         }
 
                     }

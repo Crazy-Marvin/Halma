@@ -7,7 +7,8 @@ import com.halma.game.gameobjects.Board;
 public class GameMaster {
 
     public static Handler handler;
-    public static Array<String> players;
+    private static Array<String> players;
+    private static boolean selected = false;
 
     public static boolean isSpaceFree(int x, int y) {
         if (handler.getGameState().getBoard().getBoard()[y][x].isReal()) {
@@ -62,7 +63,7 @@ public class GameMaster {
         return false;
     }
 
-    public static boolean isUpTriangleFull(int x, int y) {//not sure if this works.
+    public static boolean isDownTriangleFull(int x, int y) {
         Board b = handler.getGameState().getBoard();
         if (!b.getBoard()[y][x].isReal() && !b.getBoard()[y+1][x-1].isReal() &&
             !b.getBoard()[y+1][x].isReal() && !b.getBoard()[y+2][x-1].isReal() &&
@@ -75,5 +76,23 @@ public class GameMaster {
         return false;
     }
 
+    public static boolean isUpTriangleFull(int x, int y) {
+        Board b = handler.getGameState().getBoard();
+        if (!b.getBoard()[y][x].isReal() && !b.getBoard()[y-1][x-1].isReal() &&
+                !b.getBoard()[y-1][x].isReal() && !b.getBoard()[y-2][x-1].isReal() &&
+                !b.getBoard()[y-2][x].isReal() && !b.getBoard()[y-2][x+1].isReal() &&
+                !b.getBoard()[y-3][x-2].isReal() && !b.getBoard()[y-3][x-1].isReal() &&
+                !b.getBoard()[y-3][x].isReal() && !b.getBoard()[y-3][x+1].isReal() ) {
+
+            return true;
+        }
+        return false;
+    }
+
+    //Getters and Setters
+    public static boolean isSelected() {return selected;}
+    public static Array<String> getPlayers() {return players;}
+
+    public static void setSelected(boolean selected) {GameMaster.selected = selected;}
 
 }
