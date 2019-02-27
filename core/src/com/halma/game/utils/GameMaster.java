@@ -23,7 +23,9 @@ public class GameMaster {
         else if (px-x == 1 && py == y) return true;
         else if (px-x == -1 && py == y) return true;
         else if (px == x && py-y == -1) return true;
-        else if (px-x == -1 && py-y == -1) return true;
+        else if (px-x == 1 && py-y == -1) return true;
+        else if (y%2 == 1 && px-x == -1 && py-y == 1) return true;
+        else if (y%2 == 1 && px-x == -1 && py-y == -1) return true;
         else return false;
     }
 
