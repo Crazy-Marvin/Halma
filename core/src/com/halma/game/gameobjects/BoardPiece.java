@@ -72,13 +72,23 @@ public class BoardPiece extends BoardSpace {
 
     // Other Methods
     public void select() {
-        if (state == BoardPiece_State.NOT_SELECTED) {
+        // Unselect the boardpiece
+        if (state == BoardPiece_State.SELECTED) {
+            if (Gdx.input.justTouched() && circle.contains(Controls.x, Controls.y) && GameMaster.isSelected()) {
+                state = BoardPiece_State.NOT_SELECTED;
+                hintSpaces = new Array<HintSpace>();
+                GameMaster.setSelected(false);
+            }
+        }
+        // Select the boardpiece
+        else if (state == BoardPiece_State.NOT_SELECTED) {
             if (Gdx.input.justTouched() && circle.contains(Controls.x, Controls.y) && !GameMaster.isSelected()) {
                 state = BoardPiece_State.SELECTED;
                 createMovableAreas();
                 GameMaster.setSelected(true);
             }
         }
+
     }
 
     public void move() {
