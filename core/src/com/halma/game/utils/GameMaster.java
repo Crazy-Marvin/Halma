@@ -24,8 +24,8 @@ public class GameMaster {
         else if (px-x == -1 && py == y) return true;
         else if (px == x && py-y == -1) return true;
         else if (px-x == 1 && py-y == -1) return true;
-        else if (y%2 == 1 && px-x == -1 && py-y == 1) return true;
-        else if (y%2 == 1 && px-x == -1 && py-y == -1) return true;
+        else if (py%2 == 1 && px-x == -1 && py-y == 1) return true;
+        else if (py%2 == 1 && px-x == -1 && py-y == -1) return true;
         else return false;
     }
 
@@ -43,7 +43,7 @@ public class GameMaster {
             boolean check = false;
             Board b = handler.getGameState().getBoard();
 
-            if (!check && b.getRedPieces() != null) {
+            if (b.getRedPieces() != null) {
                 for (int i = 0; i < b.getRedPieces().length; i++) {
                     if (b.getRedPieces()[i].getX() == x && b.getRedPieces()[i].getY() == y) {
                         check = true;
