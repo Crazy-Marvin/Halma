@@ -169,32 +169,75 @@ public class BoardPiece extends BoardSpace {
         }
     }
 
-    private void createOverPieceMovablePositions(int x, int y, int px, int py) {
+    private void createOverPieceMovablePositions(int x, int y, int px, int py) { /// Something wrong here
         // check under piece
         if (y-1 > 0) {
             int xx = x;
             if (y%2 == 1) xx++;
             //check bottom left
             if (y%2 == 0 && x > 0 && GameMaster.isPieceAdjacent(xx-1, y-1, xx, y)
-                    && GameMaster.isAdjacentReal(xx-1, y-2, xx-1, y-1)) {
+                    && GameMaster.isAdjacentReal(xx-1, y-2, xx-1, y-1) && xx-1 != px && y-2 != py) {
                 hintSpaces.add(new HintSpace(handler, xx-1, y-2, this));
+                createOverPieceMovablePositions(xx-1, y-2, xx, y);
             }
             else if (y%2 == 1 && x > 0 && GameMaster.isPieceAdjacent(xx-1, y-1, xx, y)
-                    && GameMaster.isAdjacentReal(xx-2, y-2, xx-1, y-1)) {
+                    && GameMaster.isAdjacentReal(xx-2, y-2, xx-1, y-1) && xx-3 != px && y-2 != py) {
                 hintSpaces.add(new HintSpace(handler, xx-2, y-2, this));
+                createOverPieceMovablePositions(xx-2, y-2, xx, y);
             }
             //check bottom right
 
             if (y%2 == 0 && x+1 < board.getBoard()[0].length && GameMaster.isPieceAdjacent(xx, y-1, xx, y)
-                    && GameMaster.isAdjacentReal(xx+1, y-2, xx, y-1)) {
+                    && GameMaster.isAdjacentReal(xx+1, y-2, xx, y-1) && xx+1 != px && y-2 != py) {
                 hintSpaces.add(new HintSpace(handler, xx+1, y-2, this));
+                createOverPieceMovablePositions(xx+1, y-2, xx, y);
                 System.out.println("Added this 0");
             }
-            else if (y%2 == 1 && GameMaster.isPieceAdjacent(xx, y-1, xx, y)
-                    && GameMaster.isAdjacentReal(xx, y-2, xx, y-1)) {
+            else if (y%2 == 1 && x+1 < board.getBoard()[0].length && GameMaster.isPieceAdjacent(xx, y-1, xx-1, y)
+                    && GameMaster.isAdjacentReal(xx, y-2, xx, y-1) && xx+1 != px && y-2 != py) {
                 hintSpaces.add(new HintSpace(handler, xx, y-2, this));
+                createOverPieceMovablePositions(xx, y-2, xx-1, y);
                 System.out.println("Added this 1");
             }//*/
+        }
+
+        //check across the piece
+        if (x > 0 && GameMaster.isPieceAdjacent(x-1, y, x, y) && GameMaster.isAdjacentReal(x-2, y, x-1, y) && x-2 != px) {
+            hintSpaces.add(new HintSpace(handler, x-2, y, this));
+            createOverPieceMovablePositions(x-2, y, x, y);
+        }
+        if (x < board.getBoard()[0].length && GameMaster.isPieceAdjacent(x+1, y, x, y)
+                && GameMaster.isAdjacentReal(x+2, y, x+1, y) && x+2 != px) {
+            hintSpaces.add(new HintSpace(handler, x+2, y, this));
+            createOverPieceMovablePositions(x+2, y, x, y);
+        }
+
+        //check above the piece
+        if (y < board.getBoard().length-1) {
+            int xx = x;
+            if (y%2 == 1) xx++;
+            //check above left
+            if (y%2 == 0 && x > 0 && GameMaster.isPieceAdjacent(xx-1, y+1, xx, y)
+                    && GameMaster.isAdjacentReal(xx-1, y+2, xx-1, y+1) && xx-1 != px && y+2 != py) {
+                System.out.println("1s");
+                hintSpaces.add(new HintSpace(handler, xx-1, y+2, this));
+                createOverPieceMovablePositions(xx-1, y+2, xx, y);
+            }
+            else if (y%2 == 1 && x > 0 && GameMaster.isPieceAdjacent(xx-1, y+1, xx, y)
+                    && GameMaster.isAdjacentReal(xx-2, y+2, xx-1, y+1) && xx-2 != px && y+2 != py) {
+                hintSpaces.add(new HintSpace(handler, xx-2, y+2, this));
+                createOverPieceMovablePositions(xx-2, y+2, xx, y);
+            }
+            //check above right
+            if (y%2 == 0 && x < board.getBoard()[0].length && GameMaster.isPieceAdjacent(xx, y+1, xx, y)
+                    && GameMaster.isAdjacentReal(xx+1, y+2, xx, y+1) && xx+1 != px && y+2 != py) {
+                hintSpaces.add(new HintSpace(handler, xx+1, y+2, this));
+                createOverPieceMovablePositions(xx+1, y+2, xx, y);
+            }
+            else if (y%2 == 1 && x < board.getBoard()[0].length && GameMaster.isPieceAdjacent(xx, y+1, xx-1, y)
+                    && GameMaster.isAdjacentReal(xx, y+2, xx, y+1) && xx-1 != px && y+2 != py) {
+
+            }
         }
     }
 
