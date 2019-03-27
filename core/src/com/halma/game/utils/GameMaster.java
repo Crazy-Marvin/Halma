@@ -3,6 +3,8 @@ package com.halma.game.utils;
 import com.badlogic.gdx.utils.Array;
 import com.halma.game.Handler;
 import com.halma.game.gameobjects.Board;
+import com.halma.game.gameobjects.BoardPiece;
+import com.halma.game.gameobjects.HintSpace;
 
 public class GameMaster {
 
@@ -31,7 +33,9 @@ public class GameMaster {
 
     public static boolean isAdjacentReal(int x, int y, int px, int py) {
         if (isAdjacent(x, y, px, py)) {
-            if (handler.getGameState().getBoard().getBoard()[y][x].isReal()) {
+            if (y >= 0 && y < handler.getGameState().getBoard().getBoard().length
+                    && x >= 0 && x < handler.getGameState().getBoard().getBoard()[0].length
+                    && handler.getGameState().getBoard().getBoard()[y][x].isReal()) {
                 return true;
             }
         }
@@ -61,6 +65,13 @@ public class GameMaster {
                 }
             }
             return check;
+        }
+        return false;
+    }
+
+    public static boolean isHintSpaceReal(int x, int y, Array<HintSpace> hintSpaces) {
+        for (int i = 0; i < hintSpaces.size; i++) {
+            if (x == hintSpaces.get(i).getX() && y == hintSpaces.get(i).getY()) return true;
         }
         return false;
     }
