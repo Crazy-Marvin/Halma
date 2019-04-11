@@ -20,18 +20,18 @@ public class GameMaster {
     }
 
     public static boolean isAdjacent(int x, int y, int px, int py) {
-        if (px-x == 1 && py-y == 1) return true;
-        else if (px == x && py-y == 1) return true;
-        else if (px-x == 1 && py == y) return true;
-        else if (px-x == -1 && py == y) return true;
-        else if (px == x && py-y == -1) return true;
-        else if (px-x == 1 && py-y == -1) return true;
-        else if (py%2 == 1 && px-x == -1 && py-y == 1) return true;
-        else if (py%2 == 1 && px-x == -1 && py-y == -1) return true;
+        if (px-x == 1 && py-y == 1) return true; //top left
+        else if (px == x && py-y == 1) return true; // top right
+        else if (px-x == 1 && py == y) return true; // left
+        else if (px-x == -1 && py == y) return true; // right
+        else if (px == x && py-y == -1) return true; // bottom right
+        else if (px-x == 1 && py-y == -1) return true; // bottom left
+        else if (py%2 == 1 && px-x == -1 && py-y == 1) return true; // when py%2==1, top right
+        else if (py%2 == 1 && px-x == -1 && py-y == -1) return true; // when py%2==1, bottom right
         else return false;
     }
 
-    public static boolean isAdjacentReal(int x, int y, int px, int py) {
+    public static boolean isAdjacentReal(int x, int y, int px, int py) { // checks if space is open and exist
         if (isAdjacent(x, y, px, py)) {
             if (y >= 0 && y < handler.getGameState().getBoard().getBoard().length
                     && x >= 0 && x < handler.getGameState().getBoard().getBoard()[0].length
@@ -47,6 +47,7 @@ public class GameMaster {
             boolean check = false;
             Board b = handler.getGameState().getBoard();
 
+            // checks pieces4
             if (b.getRedPieces() != null) {
                 for (int i = 0; i < b.getRedPieces().length; i++) {
                     if (b.getRedPieces()[i].getX() == x && b.getRedPieces()[i].getY() == y) {
@@ -56,6 +57,7 @@ public class GameMaster {
                 }
             }
 
+            // checks pieces1
             if (!check && b.getGreenPieces() != null) {
                 for (int i = 0; i < b.getGreenPieces().length; i++) {
                     if (b.getGreenPieces()[i].getX() == x && b.getGreenPieces()[i].getY() == y) {

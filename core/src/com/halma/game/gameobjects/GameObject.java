@@ -14,6 +14,7 @@ public abstract class GameObject {
         this.y = y;
     }
 
+    // Main methods
     public void init() {}
     public abstract void update(float dt);
     public abstract void render(SpriteBatch batch);

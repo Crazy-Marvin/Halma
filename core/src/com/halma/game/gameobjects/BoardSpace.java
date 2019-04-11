@@ -42,7 +42,7 @@ public class BoardSpace extends GameObject {
     }
 
     // Other Methods
-    protected void updateDrawCoord() {
+    protected void updateDrawCoord() { //this draws the circles where they need to go on the board.
         if (y % 2 == 0) {
             drawX = x * 42.2f - 21.1f;
         } else {drawX = x * 42.2f;}
