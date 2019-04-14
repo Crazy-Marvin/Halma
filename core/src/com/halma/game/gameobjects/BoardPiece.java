@@ -255,6 +255,10 @@ public class BoardPiece extends BoardSpace {
         }
     }
 
+    private boolean checkIfInEndSpace() {
+        if (type == board.getBoard()[y][x].type) return true;
+        return false;
+    }
     // Getters and Setters
     public boolean isInEndSpace() {return inEndSpace;}
 

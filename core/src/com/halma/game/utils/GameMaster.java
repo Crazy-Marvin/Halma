@@ -140,7 +140,7 @@ public class GameMaster {
                 !b.getBoard()[y-3][x-2].isReal() && !b.getBoard()[y-3][x-1].isReal() &&
                 !b.getBoard()[y-3][x].isReal() && !b.getBoard()[y-3][x+1].isReal() ) {
 
-            return true;
+            return true; // here add more code for testing whether piece won or not.
         }
         return false;
     }
