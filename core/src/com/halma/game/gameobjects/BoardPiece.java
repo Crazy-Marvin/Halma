@@ -22,13 +22,14 @@ public class BoardPiece extends BoardSpace {
 
     private Board board;
     private BoardPiece_State state;
-    private String color;
     private Texture boardPieceImg;
     private Array<HintSpace> hintSpaces;
+    private boolean inEndSpace;
 
     // Constructor
     public BoardPiece(Handler handler, int x, int y, int type) {
         super(handler, x, y, true);
+        this.type = type;
         init(type);
     }
 
@@ -38,9 +39,13 @@ public class BoardPiece extends BoardSpace {
         board.getBoard()[y][x].setReal(false);
         if (state == null) {state = BoardPiece_State.NOT_SELECTED;}
         switch (type) {
-            case 2: color = "Red"; boardPieceImg = Assets.boardPiece_Red; break;
-            case 3: color = "Green"; boardPieceImg = Assets.boardPiece_Green; break;
-            default: color = "None";
+            case 2: boardPieceImg = Assets.boardPiece_Red; break;
+            case 3: boardPieceImg = Assets.boardPiece_Blue; break;
+            case 4: boardPieceImg = Assets.boardPiece_Purple; break;
+            case 5: boardPieceImg = Assets.boardPiece_Green; break;
+            case 6: boardPieceImg = Assets.boardPiece_Yellow; break;
+            case 7: boardPieceImg = Assets.boardPiece_SkyBlue; break;
+            default: type = -1;
         }
         updateDrawCoord();
         circle = new Circle(drawX + boardPieceImg.getWidth() * 0.75f, drawY + boardPieceImg.getWidth() * 0.75f, boardPieceImg.getWidth()*0.75f);
@@ -251,5 +256,8 @@ public class BoardPiece extends BoardSpace {
     }
 
     // Getters and Setters
+    public boolean isInEndSpace() {return inEndSpace;}
+
+    public void setInEndSpace(boolean inEndSpace) {this.inEndSpace = inEndSpace;}
 
 }

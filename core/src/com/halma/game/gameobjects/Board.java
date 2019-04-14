@@ -9,7 +9,7 @@ import com.halma.game.Handler;
 public class Board extends GameObject {
 
     private BoardSpace[][] board;
-    private BoardPiece[] redPieces, greenPieces, pieces2, pieces3, pieces5, pieces6;
+    private BoardPiece[] redPieces, greenPieces, pieces3, pieces4, pieces6, pieces7;
 
     public Board(Handler handler, int x, int y) {
         super(handler, x, y);
@@ -31,7 +31,11 @@ public class Board extends GameObject {
 
         board = new BoardSpace[17][13];
         redPieces = new BoardPiece[10];
+        pieces3 = new BoardPiece[10];
+        pieces4 = new BoardPiece[10];
         greenPieces = new BoardPiece[10];
+        pieces6 = new BoardPiece[10];
+        pieces7 = new BoardPiece[10];
 
         //Create the game board.
         for (int j = 0; j < board.length; j++) {
@@ -40,7 +44,8 @@ public class Board extends GameObject {
 
                 board[j][i] = new BoardSpace(handler, i, j, isReal);
 
-                if (b[j][i].contains("2")) {
+                if (b[j][i].contains("2")) { // bottom point
+                    board[j][i].setType(2);
                     for (int k = 0; k < redPieces.length; k++) {
                         if (redPieces[k] == null) {
                             redPieces[k] = new BoardPiece(handler, i, j, 2);
@@ -48,10 +53,47 @@ public class Board extends GameObject {
                         }
                     }
                 }
-                if (b[j][i].contains("3")) {
+                if (b[j][i].contains("3")) { // bottom right point
+                    board[j][i].setType(3);
+                    for (int k = 0; k < pieces3.length; k++) {
+                        if (pieces3[k] == null) {
+                            pieces3[k] = new BoardPiece(handler, i, j, 3);
+                            break;
+                        }
+                    }
+                }
+                if (b[j][i].contains("4")) { // top right point
+                    board[j][i].setType(4);
+                    for (int k = 0; k < pieces4.length; k++) {
+                        if (pieces4[k] == null) {
+                            pieces4[k] = new BoardPiece(handler, i, j, 4);
+                            break;
+                        }
+                    }
+                }
+                if (b[j][i].contains("5")) { // top point
+                    board[j][i].setType(5);
                     for (int k = 0; k < greenPieces.length; k++) {
                         if (greenPieces[k] == null) {
-                            greenPieces[k] = new BoardPiece(handler, i, j, 3);
+                            greenPieces[k] = new BoardPiece(handler, i, j, 5);
+                            break;
+                        }
+                    }
+                }
+                if (b[j][i].contains("6")) { // top left point
+                    board[j][i].setType(6);
+                    for (int k = 0; k < pieces6.length; k++) {
+                        if (pieces6[k] == null) {
+                            pieces6[k] = new BoardPiece(handler, i, j, 6);
+                            break;
+                        }
+                    }
+                }
+                if (b[j][i].contains("7")) { // bottom left point
+                    board[j][i].setType(7);
+                    for (int k = 0; k < pieces7.length; k++) {
+                        if (pieces7[k] == null) {
+                            pieces7[k] = new BoardPiece(handler, i, j, 7);
                             break;
                         }
                     }
@@ -71,8 +113,20 @@ public class Board extends GameObject {
         for (BoardPiece p : redPieces) {
             if (p != null) p.update(dt);
         }
+        for (BoardPiece p : pieces3) {
+            if (p != null) p.update(dt);
+        }
+        for (BoardPiece p : pieces4) {
+            if (p != null) p.update(dt);
+        }
         for (BoardPiece p : greenPieces) {
             if (p != null)  p.update(dt);
+        }
+        for (BoardPiece p : pieces6) {
+            if (p != null) p.update(dt);
+        }
+        for (BoardPiece p : pieces7) {
+            if (p != null) p.update(dt);
         }
     }
 
@@ -86,7 +140,19 @@ public class Board extends GameObject {
         for (BoardPiece p : redPieces) {
             if (p != null) p.render(batch);
         }
+        for (BoardPiece p : pieces3) {
+            if (p != null) p.render(batch);
+        }
+        for (BoardPiece p : pieces4) {
+            if (p != null) p.render(batch);
+        }
         for (BoardPiece p : greenPieces) {
+            if (p != null) p.render(batch);
+        }
+        for (BoardPiece p : pieces6) {
+            if (p != null) p.render(batch);
+        }
+        for (BoardPiece p : pieces7) {
             if (p != null) p.render(batch);
         }
     }
@@ -107,11 +173,35 @@ public class Board extends GameObject {
             }
             redPieces = null;
         }
+        if (pieces3 != null) {
+            for (BoardPiece p : pieces3) {
+                if (p != null) p.dispose();
+            }
+            pieces3 = null;
+        }
+        if (pieces4 != null) {
+            for (BoardPiece p : pieces4) {
+                if (p != null) p.dispose();
+            }
+            pieces4 = null;
+        }
         if (greenPieces != null) {
             for (BoardPiece p : greenPieces) {
                 if (p != null) p.dispose();
             }
             greenPieces = null;
+        }
+        if (pieces6 != null) {
+            for (BoardPiece p : pieces6) {
+                if (p != null) p.dispose();
+            }
+            pieces6 = null;
+        }
+        if (pieces7 != null) {
+            for (BoardPiece p : pieces7) {
+                if (p != null) p.dispose();
+            }
+            pieces7 = null;
         }
     }
 
@@ -119,8 +209,11 @@ public class Board extends GameObject {
     public BoardSpace[][] getBoard() {return board;}
     public BoardSpace getBoardSpace(int x, int y) {return board[y][x];}
     public BoardPiece[] getRedPieces() {return redPieces;}
+    public BoardPiece[] getPieces3() {return pieces3;}
+    public BoardPiece[] getPieces4() {return pieces4;}
     public BoardPiece[] getGreenPieces() {return greenPieces;}
-
+    public BoardPiece[] getPieces6() {return pieces6;}
+    public BoardPiece[] getPieces7() {return pieces7;}
 
     public void setBoard(int x, int y, BoardSpace p) {board[y][x] = p;}
     public void setRedPieces(int i, BoardPiece p) {redPieces[i] = p;}

@@ -47,7 +47,7 @@ public class GameMaster {
             boolean check = false;
             Board b = handler.getGameState().getBoard();
 
-            // checks pieces4
+            // checks pieces5
             if (b.getRedPieces() != null) {
                 for (int i = 0; i < b.getRedPieces().length; i++) {
                     if (b.getRedPieces()[i].getX() == x && b.getRedPieces()[i].getY() == y) {
@@ -57,7 +57,27 @@ public class GameMaster {
                 }
             }
 
-            // checks pieces1
+            // checks pieces3
+            if (b.getPieces3() != null) {
+                for (int i = 0; i < b.getPieces3().length; i++) {
+                    if (b.getPieces3()[i].getX() == x && b.getPieces3()[i].getY() == y) {
+                        check = true;
+                        break;
+                    }
+                }
+            }
+
+            // checks pieces4
+            if (b.getPieces4() != null) {
+                for (int i = 0; i < b.getPieces4().length; i++) {
+                    if (b.getPieces4()[i].getX() == x && b.getPieces4()[i].getY() == y) {
+                        check = true;
+                        break;
+                    }
+                }
+            }
+
+            // checks pieces2
             if (!check && b.getGreenPieces() != null) {
                 for (int i = 0; i < b.getGreenPieces().length; i++) {
                     if (b.getGreenPieces()[i].getX() == x && b.getGreenPieces()[i].getY() == y) {
@@ -66,6 +86,27 @@ public class GameMaster {
                     }
                 }
             }
+
+            // checks pieces6
+            if (b.getPieces6() != null) {
+                for (int i = 0; i < b.getPieces6().length; i++) {
+                    if (b.getPieces6()[i].getX() == x && b.getPieces6()[i].getY() == y) {
+                        check = true;
+                        break;
+                    }
+                }
+            }
+
+            // checks pieces7
+            if (b.getPieces7() != null) {
+                for (int i = 0; i < b.getPieces7().length; i++) {
+                    if (b.getPieces7()[i].getX() == x && b.getPieces7()[i].getY() == y) {
+                        check = true;
+                        break;
+                    }
+                }
+            }
+
             return check;
         }
         return false;

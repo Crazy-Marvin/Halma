@@ -12,6 +12,7 @@ public class BoardSpace extends GameObject {
     protected float drawX, drawY;
     private boolean real;
     protected Circle circle;
+    protected int type;
 
     public BoardSpace(Handler handler, int x, int y, boolean real) {
         super(handler, x, y);
@@ -61,9 +62,11 @@ public class BoardSpace extends GameObject {
     public float getDrawY() {return drawY;}
     public boolean isReal() {return real;}
     public Circle getCircle() {return circle;}
+    public int getType() {return type;}
 
     public void setDrawX(float drawX) {this.drawX = drawX;}
     public void setDrawY(float drawY) {this.drawY = drawY;}
     public void setReal(boolean real) {this.real = real;}
     public void setCircle(Circle circle) {this.circle = circle;}
+    public void setType(int type) {this.type = type;}
 }
