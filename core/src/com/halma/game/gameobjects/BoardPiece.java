@@ -56,6 +56,7 @@ public class BoardPiece extends BoardSpace {
     public void update(float dt) {
         select();
         move();
+        inEndSpace = handleIfInEndSpace(board.getBoard()[y][x].type, type);
     }
 
     @Override
@@ -90,7 +91,6 @@ public class BoardPiece extends BoardSpace {
             if (Gdx.input.justTouched() && circle.contains(Controls.x, Controls.y) && !GameMaster.isSelected()) {
                 state = BoardPiece_State.SELECTED;
                 createMovableAreas();
-                createOverPieceMovablePositions(x, y, x, y);
                 GameMaster.setSelected(true);
             }
         }
@@ -132,31 +132,30 @@ public class BoardPiece extends BoardSpace {
     }
 
     public void createMovableAreas() {
-        System.out.println("Created Movable areas.");
         createAdjacentMovableAreas();
+        createOverPieceMovablePositions(x, y, x, y);
     }
 
     private void createAdjacentMovableAreas() {
-        System.out.println("main: " + x + ", " + y);
         //check under piece
         if (y-1 > 0) {
             int xx = x;
             if (y%2 == 1) xx++;
             //check bottom left
-            if (x > 0 && GameMaster.isAdjacentReal(xx-1, y-1, xx, y)) {
+            if (x > 0 && GameMaster.isAdjacentReal(xx-1, y-1, xx, y) && GameMaster.isAreaInEndSpace(xx-1, y-1, inEndSpace)) {
                 hintSpaces.add(new HintSpace(handler, xx-1, y-1, this));
             }
             //check bottom right
-            if (GameMaster.isAdjacentReal(xx, y-1, xx, y)) {
+            if (GameMaster.isAdjacentReal(xx, y-1, xx, y) && GameMaster.isAreaInEndSpace(xx, y-1, inEndSpace)) {
                 hintSpaces.add(new HintSpace(handler, xx, y-1, this));
             }
         }
 
         // check across the piece
-        if (x > 0 && GameMaster.isAdjacentReal(x-1, y, x, y)) {
+        if (x > 0 && GameMaster.isAdjacentReal(x-1, y, x, y) && GameMaster.isAreaInEndSpace(x-1, y-1, inEndSpace)) {
             hintSpaces.add(new HintSpace(handler, x-1, y, this));
         }
-        if (x < board.getBoard()[0].length-1 && GameMaster.isAdjacentReal(x+1, y, x, y)) {
+        if (x < board.getBoard()[0].length-1 && GameMaster.isAdjacentReal(x+1, y, x, y) && GameMaster.isAreaInEndSpace(x+1, y-1, inEndSpace)) {
             hintSpaces.add(new HintSpace(handler, x+1, y, this));
         }
 
@@ -164,10 +163,10 @@ public class BoardPiece extends BoardSpace {
         if (y < board.getBoard().length-1) {
             int xx = x;
             if (y%2 == 1) xx++;
-            if (x > 0 && GameMaster.isAdjacentReal(xx-1, y+1, xx, y)) {
+            if (x > 0 && GameMaster.isAdjacentReal(xx-1, y+1, xx, y)&& GameMaster.isAreaInEndSpace(xx-1, y+1, inEndSpace)) {
                 hintSpaces.add(new HintSpace(handler, xx-1, y+1, this));
             }
-            if (GameMaster.isAdjacentReal(xx, y+1, xx, y)) {
+            if (GameMaster.isAdjacentReal(xx, y+1, xx, y)&& GameMaster.isAreaInEndSpace(xx, y+1, inEndSpace)) {
                 hintSpaces.add(new HintSpace(handler, xx, y+1, this));
             }
         }
@@ -181,13 +180,15 @@ public class BoardPiece extends BoardSpace {
             //check bottom left
             if (y%2 == 0 && x > 0 && GameMaster.isPieceAdjacent(xx-1, y-1, xx, y)
                     && GameMaster.isAdjacentReal(xx-1, y-2, xx-1, y-1)
-                    && !GameMaster.isHintSpaceReal(xx-1, y-2, hintSpaces)) {
+                    && !GameMaster.isHintSpaceReal(xx-1, y-2, hintSpaces)
+                    && GameMaster.isAreaInEndSpace(xx-1, y-2, inEndSpace)) {
                 hintSpaces.add(new HintSpace(handler, xx-1, y-2, this));
                 createOverPieceMovablePositions(xx-1, y-2, xx, y);
             }
             else if (y%2 == 1 && x > 0 && GameMaster.isPieceAdjacent(xx-1, y-1, xx, y)
                     && GameMaster.isAdjacentReal(xx-2, y-2, xx-1, y-1)
-                    && !GameMaster.isHintSpaceReal(xx-2, y-2, hintSpaces)) {
+                    && !GameMaster.isHintSpaceReal(xx-2, y-2, hintSpaces)
+                    && GameMaster.isAreaInEndSpace(xx-2, y-2, inEndSpace)) {
                 hintSpaces.add(new HintSpace(handler, xx-2, y-2, this));
                 createOverPieceMovablePositions(xx-2, y-2, xx, y);
             }
@@ -195,14 +196,16 @@ public class BoardPiece extends BoardSpace {
 
             if (y%2 == 0 && x+1 < board.getBoard()[0].length && GameMaster.isPieceAdjacent(xx, y-1, xx, y)
                     && GameMaster.isAdjacentReal(xx+1, y-2, xx, y-1)
-                    && !GameMaster.isHintSpaceReal(xx+1, y-2, hintSpaces)) {
+                    && !GameMaster.isHintSpaceReal(xx+1, y-2, hintSpaces)
+                    && GameMaster.isAreaInEndSpace(xx+1, y-2, inEndSpace)) {
                 hintSpaces.add(new HintSpace(handler, xx+1, y-2, this));
                 createOverPieceMovablePositions(xx+1, y-2, xx, y);
                 System.out.println("Added this 0");
             }
             else if (y%2 == 1 && x+1 < board.getBoard()[0].length && GameMaster.isPieceAdjacent(xx, y-1, xx-1, y)
                     && GameMaster.isAdjacentReal(xx, y-2, xx, y-1)
-                    && !GameMaster.isHintSpaceReal(xx, y-2, hintSpaces)) {
+                    && !GameMaster.isHintSpaceReal(xx, y-2, hintSpaces)
+                    && GameMaster.isAreaInEndSpace(xx, y-2, inEndSpace)) {
                 hintSpaces.add(new HintSpace(handler, xx, y-2, this));
                 createOverPieceMovablePositions(xx, y-2, xx-1, y);
                 System.out.println("Added this 1");
@@ -211,13 +214,15 @@ public class BoardPiece extends BoardSpace {
 
         //check across the piece
         if (x > 0 && GameMaster.isPieceAdjacent(x-1, y, x, y) && GameMaster.isAdjacentReal(x-2, y, x-1, y)
-                && !GameMaster.isHintSpaceReal(x-2, y, hintSpaces)) {
+                && !GameMaster.isHintSpaceReal(x-2, y, hintSpaces)
+                && GameMaster.isAreaInEndSpace(x-2, y, inEndSpace)) {
             hintSpaces.add(new HintSpace(handler, x-2, y, this));
             createOverPieceMovablePositions(x-2, y, x, y);
         }
         if (x < board.getBoard()[0].length && GameMaster.isPieceAdjacent(x+1, y, x, y)
                 && GameMaster.isAdjacentReal(x+2, y, x+1, y)
-                && !GameMaster.isHintSpaceReal(x+2, y, hintSpaces)) {
+                && !GameMaster.isHintSpaceReal(x+2, y, hintSpaces)
+                && GameMaster.isAreaInEndSpace(x+2, y, inEndSpace)) {
             hintSpaces.add(new HintSpace(handler, x+2, y, this));
             createOverPieceMovablePositions(x+2, y, x, y);
         }
@@ -229,26 +234,30 @@ public class BoardPiece extends BoardSpace {
             //check above left
             if (y%2 == 0 && x > 0 && GameMaster.isPieceAdjacent(xx-1, y+1, xx, y)
                     && GameMaster.isAdjacentReal(xx-1, y+2, xx-1, y+1)
-                    && !GameMaster.isHintSpaceReal(xx-1, y+2, hintSpaces)) {
+                    && !GameMaster.isHintSpaceReal(xx-1, y+2, hintSpaces)
+                    && GameMaster.isAreaInEndSpace(xx-1, y+2, inEndSpace)) {
                 hintSpaces.add(new HintSpace(handler, xx-1, y+2, this));
                 createOverPieceMovablePositions(xx-1, y+2, xx, y);
             }
             else if (y%2 == 1 && x > 0 && GameMaster.isPieceAdjacent(xx-1, y+1, xx, y)
                     && GameMaster.isAdjacentReal(xx-2, y+2, xx-1, y+1)
-                    && !GameMaster.isHintSpaceReal(xx-2, y+2, hintSpaces)) {
+                    && !GameMaster.isHintSpaceReal(xx-2, y+2, hintSpaces)
+                    && GameMaster.isAreaInEndSpace(xx-2, y+2, inEndSpace)) {
                 hintSpaces.add(new HintSpace(handler, xx-2, y+2, this));
                 createOverPieceMovablePositions(xx-2, y+2, xx, y);
             }
             //check above right
             if (y%2 == 0 && x < board.getBoard()[0].length && GameMaster.isPieceAdjacent(xx, y+1, xx, y)
                     && GameMaster.isAdjacentReal(xx+1, y+2, xx, y+1)
-                    && !GameMaster.isHintSpaceReal(xx+1, y+2, hintSpaces)) {
+                    && !GameMaster.isHintSpaceReal(xx+1, y+2, hintSpaces)
+                    && GameMaster.isAreaInEndSpace(xx+1, y+2, inEndSpace)) {
                 hintSpaces.add(new HintSpace(handler, xx+1, y+2, this));
                 createOverPieceMovablePositions(xx+1, y+2, xx, y);
             }
             else if (y%2 == 1 && x < board.getBoard()[0].length && GameMaster.isPieceAdjacent(xx, y+1, xx-1, y)
                     && GameMaster.isAdjacentReal(xx, y+2, xx, y+1)
-                    && !GameMaster.isHintSpaceReal(xx, y+2, hintSpaces)) {
+                    && !GameMaster.isHintSpaceReal(xx, y+2, hintSpaces)
+                    && GameMaster.isAreaInEndSpace(xx, y+2, inEndSpace)) {
                 hintSpaces.add(new HintSpace(handler, xx, y+2, this));
                 createOverPieceMovablePositions(xx, y+2, xx, y);
             }
@@ -257,6 +266,28 @@ public class BoardPiece extends BoardSpace {
 
     private boolean checkIfInEndSpace() {
         if (type == board.getBoard()[y][x].type) return true;
+        return false;
+    }
+
+    private boolean handleIfInEndSpace(int bsType, int bpType) {
+        if (bpType == 2 && bsType == 5) {
+            return true;
+        }
+        else if (bpType == 3 && bsType == 6) {
+            return true;
+        }
+        else if (bpType == 4 && bsType == 7) {
+            return true;
+        }
+        else if (bpType == 5 && bsType == 2) {
+            return true;
+        }
+        else if (bpType == 6 && bsType == 3) {
+            return true;
+        }
+        else if (bpType == 7 && bsType == 4) {
+            return true;
+        }
         return false;
     }
     // Getters and Setters

@@ -24,6 +24,7 @@ public class BoardSpace extends GameObject {
     public void init() {
         updateDrawCoord();
         circle = new Circle(drawX + imgBoardSpace.getWidth() * 0.75f, drawY + imgBoardSpace.getWidth() * 0.75f, imgBoardSpace.getWidth()*0.75f);
+        if (real) type = 1;
     }
 
     @Override

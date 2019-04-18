@@ -119,6 +119,16 @@ public class GameMaster {
         return false;
     }
 
+    public static boolean isAreaInEndSpace(int x, int y, boolean inEndSpace) {
+        if (inEndSpace) {
+            if (handler.getGameState().getBoard().getBoard()[y][x].getType() != 1) {
+                return true;
+            }
+            return false;
+        }
+        return true;
+    }
+
     public static boolean isDownTriangleFull(int x, int y) {
         Board b = handler.getGameState().getBoard();
         if (!b.getBoard()[y][x].isReal() && !b.getBoard()[y+1][x-1].isReal() &&
