@@ -150,9 +150,72 @@ public class GameMaster {
                 !b.getBoard()[y-3][x-2].isReal() && !b.getBoard()[y-3][x-1].isReal() &&
                 !b.getBoard()[y-3][x].isReal() && !b.getBoard()[y-3][x+1].isReal() ) {
 
-            return true; // here add more code for testing whether piece won or not.
+            return true;
         }
         return false;
+    }
+
+    public static void checkWinner() {
+        String winner = returnWinner();
+        if (!winner.equalsIgnoreCase("None")) {
+            System.out.println(winner + " has won!");
+            // some game end code here...
+            
+        }
+    }
+
+    public static String returnWinner() {
+        Board b = handler.getGameState().getBoard();
+
+        // check for pieces2
+        for (int i = 0; i < b.getRedPieces().length; i++) {
+            if (!b.getRedPieces()[i].isInEndSpace())
+                break;
+            if (i == 9)
+                return "Player 2";
+        }
+
+        // check for pieces3
+        for (int i = 0; i < b.getPieces3().length; i++) {
+            if (!b.getPieces3()[i].isInEndSpace())
+                break;
+            if (i == 9)
+                return "Player 5";
+        }
+
+        // check for pieces4
+        for (int i = 0; i < b.getPieces4().length; i++)  {
+            if (!b.getPieces4()[i].isInEndSpace())
+                break;
+            if (i == 9)
+                return "Player 3";
+        }
+
+        // check for pieces5
+        for (int i = 0; i < b.getGreenPieces().length; i++)  {
+            if (!b.getGreenPieces()[i].isInEndSpace())
+                break;
+            if (i == 9)
+                return "Player 1";
+        }
+
+        // check for pieces6
+        for (int i = 0; i < b.getPieces6().length; i++)  {
+            if (!b.getPieces6()[i].isInEndSpace())
+                break;
+            if (i == 9)
+                return "Player 6";
+        }
+
+        // check for pieces7
+        for (int i = 0; i < b.getPieces7().length; i++)  {
+            if (!b.getPieces7()[i].isInEndSpace())
+                break;
+            if (i == 9)
+                return "Player 4";
+        }
+
+        return "None";
     }
 
     //Getters and Setters
