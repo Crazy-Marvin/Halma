@@ -5,6 +5,7 @@ import com.halma.game.Handler;
 import com.halma.game.gameobjects.Board;
 import com.halma.game.gameobjects.BoardPiece;
 import com.halma.game.gameobjects.HintSpace;
+import com.halma.game.states.State;
 
 public class GameMaster {
 
@@ -160,7 +161,8 @@ public class GameMaster {
         if (!winner.equalsIgnoreCase("None")) {
             System.out.println(winner + " has won!");
             // some game end code here...
-
+            State.setCurrentState(handler.getMenuState());
+            State.getCurrentState().init();
         }
     }
 

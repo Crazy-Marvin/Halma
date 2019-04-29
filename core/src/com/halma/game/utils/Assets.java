@@ -5,6 +5,8 @@ import com.badlogic.gdx.graphics.Texture;
 
 public class Assets {
 
+    public static Texture playButton;
+
     public static Texture boardSpace;
     public static Texture boardPiece_Red;
     public static Texture boardPiece_Green;
@@ -15,6 +17,8 @@ public class Assets {
     public static Texture hintPiece;
 
     public static void init() {
+        playButton = new Texture(Gdx.files.internal("PlayButton.png"));
+
         boardSpace = new Texture(Gdx.files.internal("BoardSpace.png"));
         boardPiece_Red = new Texture(Gdx.files.internal("BoardPiece_Red.png"));
         boardPiece_Green = new Texture((Gdx.files.internal("BoardPiece_Green.png")));
@@ -26,6 +30,8 @@ public class Assets {
     }
 
     public static void dispose() {
+        playButton.dispose();
+
         boardSpace.dispose();
         boardPiece_Red.dispose();
         boardPiece_Green.dispose();
