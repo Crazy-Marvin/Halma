@@ -152,10 +152,10 @@ public class BoardPiece extends BoardSpace {
         }
 
         // check across the piece
-        if (x > 0 && GameMaster.isAdjacentReal(x-1, y, x, y) && GameMaster.isAreaInEndSpace(x-1, y-1, inEndSpace)) {
+        if (x > 0 && GameMaster.isAdjacentReal(x-1, y, x, y) && GameMaster.isAreaInEndSpace(x-1, y, inEndSpace)) {
             hintSpaces.add(new HintSpace(handler, x-1, y, this));
         }
-        if (x < board.getBoard()[0].length-1 && GameMaster.isAdjacentReal(x+1, y, x, y) && GameMaster.isAreaInEndSpace(x+1, y-1, inEndSpace)) {
+        if (x < board.getBoard()[0].length-1 && GameMaster.isAdjacentReal(x+1, y, x, y) && GameMaster.isAreaInEndSpace(x+1, y, inEndSpace)) {
             hintSpaces.add(new HintSpace(handler, x+1, y, this));
         }
 

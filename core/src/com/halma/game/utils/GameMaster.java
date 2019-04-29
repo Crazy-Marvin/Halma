@@ -160,7 +160,7 @@ public class GameMaster {
         if (!winner.equalsIgnoreCase("None")) {
             System.out.println(winner + " has won!");
             // some game end code here...
-            
+
         }
     }
 
