@@ -12,7 +12,8 @@ import com.halma.game.utils.Controls;
 public class UIButton extends GameObject {
 
     public enum b {
-        PLAY
+        PLAY,
+        EXIT
     }
 
     public Rectangle bounds;
@@ -27,6 +28,8 @@ public class UIButton extends GameObject {
         this.t = t;
         bounds.width = t.getWidth();
         bounds.height = t.getHeight();
+        bounds.x -= bounds.width/2;
+        bounds.y -= bounds.height/2;
         this.button = button;
     }
 
@@ -56,6 +59,9 @@ public class UIButton extends GameObject {
             case PLAY:
                 State.setCurrentState(handler.getGameState());
                 State.getCurrentState().init();
+                break;
+            case EXIT:
+                Gdx.app.exit();
                 break;
             default:
         }
