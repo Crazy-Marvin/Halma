@@ -138,7 +138,7 @@ public class BoardPiece extends BoardSpace {
 
     private void createAdjacentMovableAreas() {
         //check under piece
-        if (y-1 > 0) {
+        if (y-1 >= 0) {
             int xx = x;
             if (y%2 == 1) xx++;
             //check bottom left

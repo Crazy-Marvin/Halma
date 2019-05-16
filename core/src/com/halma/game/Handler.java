@@ -13,6 +13,7 @@ public class Handler {
     //States
     private State gameState;
     private State menuState;
+    private State gameOverState;
 
     // Constructor
     public Handler(Main main) {
@@ -26,6 +27,7 @@ public class Handler {
 
         gameState = new GameState(this);
         menuState = new MenuState(this);
+        gameOverState = new GameOverState(this);
         State.setCurrentState(menuState);
         State.getCurrentState().init();
     }
@@ -46,6 +48,7 @@ public class Handler {
     public void dispose() {
         gameState.dispose();
         menuState.dispose();
+        gameOverState.dispose();
         Assets.dispose();
     }
 
@@ -54,4 +57,5 @@ public class Handler {
     // Getters and Setters
     public GameState getGameState() {return (GameState) gameState;}
     public MenuState getMenuState() {return (MenuState) menuState;}
+    public GameOverState getGameOverState() {return (GameOverState) gameOverState;}
 }

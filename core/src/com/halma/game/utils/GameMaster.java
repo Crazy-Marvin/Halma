@@ -10,6 +10,7 @@ import com.halma.game.states.State;
 public class GameMaster {
 
     public static Handler handler;
+    private static String winner = "None";
     private static Array<String> players;
     private static boolean selected = false;
 
@@ -157,11 +158,11 @@ public class GameMaster {
     }
 
     public static void checkWinner() {
-        String winner = returnWinner();
+        winner = returnWinner();
         if (!winner.equalsIgnoreCase("None")) {
             System.out.println(winner + " has won!");
             // some game end code here...
-            State.setCurrentState(handler.getMenuState());
+            State.setCurrentState(handler.getGameOverState());
             State.getCurrentState().init();
         }
     }
@@ -223,6 +224,7 @@ public class GameMaster {
     //Getters and Setters
     public static boolean isSelected() {return selected;}
     public static Array<String> getPlayers() {return players;}
+    public static String getWinner() {return winner;}
 
     public static void setSelected(boolean selected) {GameMaster.selected = selected;}
 

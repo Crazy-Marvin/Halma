@@ -1,9 +1,13 @@
 package com.halma.game.utils;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 
 public class Assets {
+
+    public static BitmapFont font;
 
     public static Texture playButton;
     public static Texture exitButton;
@@ -18,6 +22,9 @@ public class Assets {
     public static Texture hintPiece;
 
     public static void init() {
+        font = new BitmapFont();
+        font.setColor(Color.BLACK);
+
         playButton = new Texture(Gdx.files.internal("PlayButton.png"));
         exitButton = new Texture(Gdx.files.internal("ExitButton.png"));
 
@@ -32,6 +39,7 @@ public class Assets {
     }
 
     public static void dispose() {
+        font.dispose();
         playButton.dispose();
         exitButton.dispose();
 
