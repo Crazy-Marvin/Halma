@@ -1,6 +1,7 @@
 package rocks.poopjournal.halma;
 
 import com.badlogic.gdx.Game;
+import rocks.poopjournal.halma.menu.Menu;
 
 public class Halma extends Game {
 	/*SpriteBatch batch;
