@@ -1,6 +1,7 @@
 package rocks.poopjournal.halma;
 
 import com.badlogic.gdx.scenes.scene2d.Actor;
+import rocks.poopjournal.halma.menu.Menu;
 import rocks.poopjournal.halma.play.Player;
 
 public class ErgebnisScreen extends BaseScreen{
