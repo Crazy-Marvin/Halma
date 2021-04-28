@@ -30,7 +30,7 @@ public abstract class BaseScreen extends ScreenAdapter {
 
     private void create(){
         bgColor = Color.OLIVE;
-        skin = new Skin(Gdx.files.internal("halma.json"));
+        skin = new Skin(Gdx.files.internal("skin/halma.json"));
         stage = new Stage(new ScreenViewport());
         layout = new Table(skin);
         listener = new Listener();

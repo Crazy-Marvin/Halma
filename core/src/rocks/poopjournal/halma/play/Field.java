@@ -15,7 +15,7 @@ public class Field extends Image {
     public final static char BLACK = 'l', LILA = 'h', GREEN = 'g', RED = 'r', BLUE = 'b', YELLOW = 'w', NONE = 'N', POSSIBLE = 'p';
     private Vector2 pos, posTemp;
     private char colorChar = NONE, colorCharTemp = NONE;
-    public static float size;
+    public static float size=Gdx.graphics.getHeight()/35;
     private Listener listener = new Listener();
     private Field up, down, left, right, upRight, upLeft, downLeft, downRight;
     private LinkedList<Field> neighbours = new LinkedList<>();
@@ -28,6 +28,8 @@ public class Field extends Image {
         layoutChanged();
         colorChanged();
         this.addListener(listener);
+        this.scaleBy(0.5f);
+        debug();
     }
     public Field(float x, float y) {
         this(new Vector2(x,y));

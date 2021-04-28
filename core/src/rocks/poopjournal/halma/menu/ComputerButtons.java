@@ -4,7 +4,6 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.Group;
-import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import com.badlogic.gdx.scenes.scene2d.ui.Button;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
@@ -58,7 +57,7 @@ public class ComputerButtons extends Group {
             menu.titleLabel.setColor(Color.WHITE);
             menu.titleLabel.setText("HALMA");
             menu.titleLabel.pack();
-            menu.infoLabel.addAction(Actions.color(Color.BLUE, 2f));
+            menu.aboutLabel.addAction(Actions.color(Color.BLUE, 2f));
             menu.rules.addAction(Actions.color(Color.BLUE, 2f));
             menu.titleLabel.setPosition(width/2 - menu.titleLabel.getWidth()/2, height*0.9f);
             menu.titleLabel.addAction(Actions.forever(Actions.sequence(

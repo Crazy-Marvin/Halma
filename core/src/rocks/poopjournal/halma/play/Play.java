@@ -3,7 +3,7 @@ package rocks.poopjournal.halma.play;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import rocks.poopjournal.halma.BaseScreen;
-import rocks.poopjournal.halma.ErgebnisScreen;
+import rocks.poopjournal.halma.ResultScreen;
 import rocks.poopjournal.halma.Halma;
 
 import java.util.LinkedList;
@@ -59,7 +59,7 @@ public class Play extends BaseScreen {
         WinnerChecker.players = playerCount;
         if(WinnerChecker.check(board)) {
             System.out.println("someone won!!!");
-            halma.setScreen(new ErgebnisScreen(halma, players.get(currentPlayerIndex)));
+            halma.setScreen(new ResultScreen(halma, players.get(currentPlayerIndex)));
         }
         currentPlayerIndex++;
         if(currentPlayerIndex > players.size()-1)
