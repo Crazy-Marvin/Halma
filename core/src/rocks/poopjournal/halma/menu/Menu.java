@@ -1,13 +1,13 @@
 package rocks.poopjournal.halma.menu;
 
-import aurelienribon.tweenengine.Tween;
-import aurelienribon.tweenengine.TweenEquations;
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import com.badlogic.gdx.scenes.scene2d.ui.*;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
+import rocks.poopjournal.halma.AboutScreen;
 import rocks.poopjournal.halma.BaseScreen;
 import rocks.poopjournal.halma.Halma;
 import rocks.poopjournal.halma.play.Play;
@@ -23,7 +23,7 @@ public class Menu extends BaseScreen {
     public Button startButton;
     private boolean squareBoard;
     public Label rules;
-    public Label infoLabel;
+    public Label aboutLabel;
 
     public int state = 0;
 
@@ -57,14 +57,14 @@ public class Menu extends BaseScreen {
             }
         });
         float dif= stage.getWidth()/5;
-        infoLabel=new Label("about us",skin);
+        aboutLabel =new Label("about us",skin);
         rules=new Label("play-rules ",skin);
-        infoLabel.setPosition(stage.getWidth()/2 + dif/2- infoLabel.getWidth()/2, stage.getHeight()/6-infoLabel.getHeight()/2);
+        aboutLabel.setPosition(stage.getWidth()/2 + dif/2- aboutLabel.getWidth()/2, stage.getHeight()/6- aboutLabel.getHeight()/2);
         rules.setPosition(stage.getWidth()/2 - dif/2- rules.getWidth()/2, stage.getHeight()/6-rules.getHeight()/2);
         stage.addActor(rules);
-        stage.addActor(infoLabel);
+        stage.addActor(aboutLabel);
         rules.setColor(Color.CLEAR);
-        infoLabel.setColor(Color.CLEAR);
+        aboutLabel.setColor(Color.CLEAR);
 
 
         startButton = new Button(skin, "play");
@@ -73,6 +73,7 @@ public class Menu extends BaseScreen {
         addButtonsToListener(startButton, squareBoardButton);
         addButtonsToListener(playerButtons.buttons);
         addButtonsToListener(computerButtons.buttons);
+        addButtonsToListener(aboutLabel, rules);
         startButton.setColor(1,1,1,0);
         computerButtons.setColor(1,1,1,0);
         playerButtons.setColor(1,1,1,0);
@@ -83,11 +84,18 @@ public class Menu extends BaseScreen {
     @Override
     public void clicked(Actor a) {
         super.clicked(a);
-        if(computerButtons.buttons.contains(a)) computerButtons.clicked(a);
-        if(playerButtons.buttons.contains(a)) playerButtons.clicked(a);
-        if(a == squareBoardButton) squareBoard = squareBoardButton.isChecked();
-        if(a == startButton) halma.setScreen(Play.createInstance(halma, playerCount, computerCount, squareBoard));
-
+        if (computerButtons.buttons.contains(a)) computerButtons.clicked(a);
+        if (playerButtons.buttons.contains(a)) playerButtons.clicked(a);
+        if (a == squareBoardButton) squareBoard = squareBoardButton.isChecked();
+        if (a == startButton) halma.setScreen(Play.createInstance(halma, playerCount, computerCount, squareBoard));
+        if (a == aboutLabel)
+            stage.addAction(Actions.sequence(Actions.fadeOut(1), Actions.run(new Runnable() {public void run() {
+                halma.setScreen(new AboutScreen(halma));
+            }})));
+        if (a == rules)
+            stage.addAction(Actions.sequence(Actions.fadeOut(1), Actions.run(new Runnable() {public void run() {
+                Gdx.net.openURI("https://www.mastersofgames.com/rules/halma-rules.htm");
+            }}), Actions.fadeIn(1f)));
         computerCount = computerButtons.result;
         playerCount = playerButtons.result;
 

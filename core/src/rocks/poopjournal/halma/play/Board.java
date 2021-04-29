@@ -7,10 +7,11 @@ import java.util.LinkedList;
 
 public class Board {
     private LinkedList<Field> fields = new LinkedList<>();
-    public int width, height;
+    public static int width, height;
     private Stage stage;
     private LinkedList<LinkedList<Field>> colorFields;
-    private boolean isSquare;
+    public static boolean isSquare;
+    private FieldGroup fieldGroup;
 
     public LinkedList<Field> upper = new LinkedList();
     public LinkedList<Field> upperLeft = new LinkedList();
@@ -26,8 +27,9 @@ public class Board {
     public Board create(){
         if(isSquare)createSquare();
         else createStar();
+        fieldGroup = new FieldGroup(stage.getWidth(), stage.getHeight(), stage);
         for(Field f : fields) {
-            stage.addActor(f);
+            fieldGroup.addActor(f);
             f.createNeighbours();
         }
         return this;
