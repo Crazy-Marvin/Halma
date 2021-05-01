@@ -1,12 +1,29 @@
-<b>Ein guter Blick auf schlechte Gewohnheiten.</b> Notieren Sie Ihre Laster mit einem Fingertipp direkt von der Startseite aus. Verwenden Sie Notizen, um Details hinzuzufügen - wie eine gesunde Alternative zu dieser Tafel Schokolade, der Sie nicht widerstehen können. Und organisieren Sie Ihre Eingabe mit Labels.
+Halma ist ein Strategie-Brettspiel, das die vereinfachte Variante des beliebten Halma-Spiels ist. Ihr Ziel ist es, alles zu tun, um der erste Spieler zu sein, der seine Spielfiguren über das Brett jagt. 
+Halma ist ein quelloffenes Halma-Spiel, das sowohl die traditionelle 16x16 als auch die chinesische Dame-Variante bietet. Die Multiplayer-Funktion ermöglicht es Ihnen, die Dame mit bis zu 6 Spielern zu spielen. Wenn Sie den Mehrspielermodus nicht spielen wollen, können Sie Ihre Fähigkeiten im Lösen von Damespielen gegen die KI herausfordern.
+Wenn Sie also auf solche Strategie-Brettspiele stehen und nach einem perfekten Halma-Erlebnis suchen, sind Sie hier genau richtig. Laden Sie Halma kostenlos auf Ihr Android-Gerät herunter, wählen Sie Ihre bevorzugten Bretttypen und haben Sie Spaß beim Spielen von chinesischen Damespielen mit Familie, Freunden oder anderen Spielern auf der ganzen Welt.
 
+Ein Strategie-Brettspiel, bei dem Sie gegen Freunde antreten können
+Bei Halma geht es darum, das bestmögliche Spielerlebnis auf Ihrem Android-Gerät zu bieten. Sie haben die Möglichkeit, gegen die KI zu spielen, oder den Mehrspielermodus zu nutzen, um mit zwei, drei, vier oder sechs Personen zu spielen. 
+Egal, ob Sie ein professioneller chinesischer Damespieler sind oder gerade erst angefangen haben, dieses Strategie-Brettspiel zu lernen, wir haben für Sie das Richtige. Sie können entweder das traditionelle 16x16-Brett oder das Chinesische Dame-Brett spielen.
 
-<b>Schneller als Sie einen Stift greifen können.</b> Finden Sie Ihre schlechten Gewohnheiten auf der Startseite und markieren Sie die Einträge, denen Sie nachgegeben haben. Diese werden für den Tag nach Getan verschoben. Beginnen Sie am nächsten Morgen mit einer vollständigen Liste von Dingen, die Sie vermeiden sollten.
+Kennen Sie die Tricks, um chinesische Dame zu gewinnen? 
+Das Spielprinzip von Halma ist so einfach wie das Bewegen Ihrer Spielsteine über das Brett, jedoch sollten Sie eine Strategie verfolgen, wenn Sie gegen die Gegner gewinnen wollen. Es gibt mehrere Strategien, die Sie für den Erfolg gegen Ihren Gegner verwenden können, und die Kenntnis einiger Eröffnungszug-Tricks kann die Chance erhöhen, das Spiel zu gewinnen und als Erster alle seine Steine über das Brett zu ziehen.
+Was ist Ihre bevorzugte Eröffnungszug-Strategie? Gehören Sie zu denjenigen, die lieber auf die Mittellinie zielen, oder ziehen Sie von den Seiten her? Laden Sie Halma kostenlos auf Ihr Android-Gerät herunter und probieren Sie verschiedene Strategien aus, bevor Sie mit Familie und Freunden in den Wettkampf gehen. 
 
-
-<b>Bleiben Sie auf dem Laufenden.</b> Das Protokoll gibt Ihnen einen Einblick über Ihre Gesamterfolgsraten und zeigt auf, mit welcher schlechten Angewohnheit Sie am meisten verbunden waren - über eine Woche, einen Monat oder ein Jahr. So können Sie leicht auf ein besseres Ich hinarbeiten.
-
-
-Webseite: <a href="https://www.crazymarvin.com/todont">https://www.crazymarvin.com/todont</a>
-Übersetzte To Don’t: <a href="https://crowdin.com/project/ToDont">https://crowdin.com/project/ToDont</a> 
-Quelltext auf GitHub: <a href="https://github.com/Crazy-Marvin/ToDont">https://github.com/Crazy-Marvin/ToDont</a>
+Wer sollte dieses kostenlose Strategie-Brettspiel installieren?
+Wenn Sie zu einem der folgenden Nutzertypen gehören, wird Halma Ihr bester Begleiter, um in Ihrer Freizeit etwas Zeit totzuschlagen und Ihre Fähigkeiten im Lösen von Puzzles zu verbessern:
+Erstens. Wenn Sie ein professioneller chinesischer Dame-Spieler sind und nach einer Halma-App suchen, um die bestmögliche Erfahrung auf Ihrem Android-Gerät zu haben, sind wir hier, um zu helfen.
+Zweitens. Wenn Sie auf der Suche nach einem Strategie-Brettspiel sind, um Ihre Konzentrationsfähigkeit zu verbessern und Ihre Rätsel-Lösungsfähigkeiten herauszufordern, dann ist die große Auswahl an professionellen Halma-Spielern genau das Richtige für Sie. 
+Drittens. Wenn Sie auf der Suche nach einem spaßigen Multiplayer-Spiel sind, um gegen Familie, Freunde und andere professionelle Halma-Spieler anzutreten, ist der Multiplayer-Modus die perfekte Wahl für Sie.
+Was noch? Da die gesamten Funktionen dieses Halma-Spiels kostenlos zur Verfügung stehen, kann es nicht schaden, es auszuprobieren und die Funktionen selbst zu erkunden. 
+Die Hauptmerkmale von Halma auf einen Blick:
+    - Sauberes und ordentliches Design mit einer frischen und intuitiven Benutzeroberfläche
+    - Hochwertige Grafiken mit flüssigen Animationen
+    - Unterstützt sowohl traditionelle 16x16 als auch die chinesische Dame-Variante
+    - Open-Source-Spiel für chinesische Dame (https://github.com/Crazy-Marvin/Halma)
+    - Mehrspielermodus zum Spielen mit zwei, drei, vier oder sechs Personen
+    - Spaß für alle Altersgruppen
+    - Kostenlos zu spielen
+Halma, das kostenlose chinesische Dame-Spiel, bietet also alles, was man von solchen Strategie-Brettspielen erwarten sollte, und es setzt die Messlatte sogar noch höher, indem es die Mehrspieler-Funktion bietet, um Halma mit Familie und Freunden zu spielen. Es unterstützt sowohl die vereinfachte als auch die traditionelle Variante, und Sie können mit bis zu 6 Spielern spielen.
+Vergessen Sie nicht, solide Strategien zu haben, um auf dem Brett voranzukommen und versuchen Sie, verschiedene Eröffnungszug-Ansätze zu verwenden und einen Trick im Ärmel zu haben.
+Laden Sie Halma kostenlos auf Ihr Android-Telefon oder -Tablet herunter und lassen Sie uns über alle Fehler, Fragen, Funktionswünsche oder andere Vorschläge wissen.
