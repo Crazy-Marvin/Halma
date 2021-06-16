@@ -3,6 +3,8 @@ package rocks.poopjournal.halma;
 import com.badlogic.gdx.Game;
 import rocks.poopjournal.halma.menu.Menu;
 
+import java.util.Locale;
+
 public class Halma extends Game {
 	/*SpriteBatch batch;
 	Texture img;*/
@@ -11,6 +13,9 @@ public class Halma extends Game {
 	public void create () {
 		/*batch = new SpriteBatch();
 		img = new Texture("badlogic.jpg");*/
+		System.out.println("program start :)");
+		System.out.println("your language is:");
+		System.out.println(Locale.getDefault().toString());
 		setScreen(new Menu(this));
 	}
 

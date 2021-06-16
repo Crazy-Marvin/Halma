@@ -6,8 +6,8 @@ import rocks.poopjournal.halma.Halma;
 
 public class DesktopLauncher {
 	public static void main (String[] arg) {
+		System.out.println("bin am Desktop");
 		LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
-		config.resizable = false;
 		new LwjglApplication(new Halma(), config);
 	}
 }
