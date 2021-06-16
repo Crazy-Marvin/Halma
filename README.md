@@ -27,6 +27,11 @@ This is the Halma game built with the awesome [libGDX](https://libgdx.com/) fram
         height="80"
         src="https://user-images.githubusercontent.com/15004217/36810046-fa306856-1cc9-11e8-808e-6eb8a81783c7.png" />
         </a>
+<a href="https://halma.app/">
+    <img alt="Get it on WebGL"
+        height="80"
+        src="https://user-images.githubusercontent.com/15004217/36810049-fac5dc74-1cc9-11e8-81e5-a2565ffd1d83.png" />
+        </a> 
 
 # Contributing
 
