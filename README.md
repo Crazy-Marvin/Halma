@@ -1,5 +1,3 @@
-# Halma
-
 [![Build Status](https://travis-ci.org/Crazy-Marvin/Halma.svg?branch=master)](https://travis-ci.org/Crazy-Marvin/Halma)
 [![Known Vulnerabilities](https://snyk.io/test/github/Crazy-Marvin/Halma/badge.svg)](https://snyk.io/test/github/Crazy-Marvin/Halma)
 [![License](https://img.shields.io/github/license/Crazy-Marvin/Halma.svg)](LICENSE.txt)
@@ -7,7 +5,20 @@
 [![Last commit](https://img.shields.io/github/last-commit/Crazy-Marvin/Halma.svg)](https://github.com/Crazy-Marvin/Halma/)
 [![Releases](https://img.shields.io/github/downloads/Crazy-Marvin/Halma/total.svg)](https://github.com/Crazy-Marvin/Halma/releases)
 
-Halma Game Built With The Awesome libGDX Framework
+# Halma
+
+This is the Halma game built with the awesome [libGDX](https://libgdx.com/) framework.
+
+<a href="https://f-droid.org/packages/rocks.poopjournal.halma/">
+    <img alt="Get it on F-Droid"
+        height="80"
+        src="https://user-images.githubusercontent.com/15004217/36919296-19b8524e-1e5d-11e8-8962-48463b1cec8a.png" />
+        </a>
+<a href="https://play.google.com/store/apps/details?id=rocks.poopjournal.halma">
+    <img alt="Get it on Google Play"
+        height="80"
+        src="https://user-images.githubusercontent.com/15004217/36810046-fa306856-1cc9-11e8-808e-6eb8a81783c7.png" />
+        </a>
 
 # Contributing
 
