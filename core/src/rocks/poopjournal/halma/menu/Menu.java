@@ -10,6 +10,7 @@ import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import rocks.poopjournal.halma.AboutScreen;
 import rocks.poopjournal.halma.BaseScreen;
 import rocks.poopjournal.halma.Halma;
+import rocks.poopjournal.halma.RulesScreen;
 import rocks.poopjournal.halma.play.Play;
 
 public class Menu extends BaseScreen {
@@ -94,7 +95,7 @@ public class Menu extends BaseScreen {
             }})));
         if (a == rules)
             stage.addAction(Actions.sequence(Actions.fadeOut(1), Actions.run(new Runnable() {public void run() {
-                Gdx.net.openURI("https://www.mastersofgames.com/rules/halma-rules.htm");
+                halma.setScreen(new RulesScreen(halma));
             }}), Actions.fadeIn(1f)));
         computerCount = computerButtons.result;
         playerCount = playerButtons.result;

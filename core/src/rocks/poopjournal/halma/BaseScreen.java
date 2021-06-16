@@ -3,6 +3,8 @@ package rocks.poopjournal.halma;
 import aurelienribon.tweenengine.Tween;
 import aurelienribon.tweenengine.TweenManager;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
+import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.ScreenAdapter;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
@@ -11,7 +13,9 @@ import com.badlogic.gdx.scenes.scene2d.ui.*;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import rocks.poopjournal.halma.menu.Animator;
+import rocks.poopjournal.halma.menu.Menu;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.LinkedList;
 
 public abstract class BaseScreen extends ScreenAdapter {
@@ -22,6 +26,7 @@ public abstract class BaseScreen extends ScreenAdapter {
     protected Halma halma;
     protected Listener listener;
     protected TweenManager tweenManager;
+    protected Class nextScreen;
 
     public BaseScreen(Halma halma) {
         this.halma = halma;
@@ -29,18 +34,46 @@ public abstract class BaseScreen extends ScreenAdapter {
     }
 
     private void create(){
+        System.out.println("test1");
         bgColor = Color.OLIVE;
         skin = new Skin(Gdx.files.internal("skin/halma.json"));
-        stage = new Stage(new ScreenViewport());
+        System.out.println("test2");
+        stage = new Stage(new ScreenViewport()){
+            @Override
+            public boolean keyDown(int keyCode) {
+                if(keyCode == Input.Keys.BACK){
+                    if(halma.getScreen().getClass() != Menu.class);
+                    try {
+                        halma.setScreen((Screen) nextScreen.getConstructors()[0].newInstance(halma));
+                    } catch (IllegalAccessException e) {
+                        e.printStackTrace();
+                    } catch (InstantiationException e) {
+                        e.printStackTrace();
+                    } catch (InvocationTargetException e) {
+                        e.printStackTrace();
+                    }
+                    return true;
+                }
+                return super.keyDown(keyCode);
+            }
+        };
         layout = new Table(skin);
         listener = new Listener();
         tweenManager = new TweenManager();
+        System.out.println("test3");
         Tween.setCombinedAttributesLimit(10);
+        System.out.println("test 34");
         Tween.registerAccessor(Actor.class, new Animator());
-
+        System.out.println("test 35");
+        this.nextScreen = Menu.class;
+        System.out.println("test 36");
         Gdx.input.setInputProcessor(stage);
+        System.out.println("test4");
+        Gdx.input.setCatchKey(Input.Keys.BACK, true);
         stage.addActor(layout);
+        System.out.println("test5");
         layout.setFillParent(true);
+        System.out.println("test 6!!!");
     }
 
     @Override
