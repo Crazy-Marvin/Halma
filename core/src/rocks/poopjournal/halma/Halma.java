@@ -1,7 +1,7 @@
 package rocks.poopjournal.halma;
 
 import com.badlogic.gdx.Game;
-import rocks.poopjournal.halma.menu.Menu;
+import rocks.poopjournal.halma.redesign.Menu;
 
 import java.util.Locale;
 

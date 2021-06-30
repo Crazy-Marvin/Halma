@@ -4,7 +4,8 @@ gwt {
     minHeapSize="1G"
 
     src = files(file("src/")) // Needs to be in front of "modules" below.
-    modules 'com.martinzky.halma.GdxDefinition'
+    modules 'com.martinzky.halma' +
+            '.GdxDefinition'
     devModules 'com.martinzky.halma.GdxDefinitionSuperdev'
     project.webAppDirName = 'webapp'
 
