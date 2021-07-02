@@ -1,12 +1,9 @@
 package rocks.poopjournal.halma.menu;
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.scenes.scene2d.Actor;
-import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import com.badlogic.gdx.scenes.scene2d.ui.*;
-import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import rocks.poopjournal.halma.AboutScreen;
 import rocks.poopjournal.halma.BaseScreen;
 import rocks.poopjournal.halma.Halma;
@@ -51,12 +48,6 @@ public class Menu extends BaseScreen {
         squareBoardButton.setPosition(stage.getWidth()/2-squareBoardButton.getWidth()/2,
                 stage.getHeight()/3-squareBoardButton.getHeight()/2);
         stage.addActor(squareBoardButton);
-        squareBoardButton.addListener(new ClickListener(){
-            @Override
-            public void clicked(InputEvent event, float x, float y) {
-
-            }
-        });
         float dif= stage.getWidth()/5;
         aboutLabel =new Label("about us",skin);
         rules=new Label("play-rules ",skin);
