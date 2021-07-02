@@ -3,6 +3,9 @@
 	"font": {
 		"file": "font-export.fnt"
 	},
+	"HALMA": {
+		"file": "HALMA.fnt"
+	},
 	"title": {
 		"file": "font-title-export.fnt"
 	}
@@ -72,13 +75,17 @@
 			"b": 0.59,
 			"a": 1
 		}
+	},
+	"WHITE": {
+		"name": "white-pixel",
+		"color": "white"
 	}
 },
 "com.badlogic.gdx.scenes.scene2d.ui.Button$ButtonStyle": {
 	"default": {
-		"up": "round-gray",
-		"down": "round-dark-gray",
-		"over": "round-light-gray",
+		"up": "WHITE",
+		"down": "WHITE",
+		"over": "WHITE",
 		"checked": "round-dark-gray"
 	},
 	"toggle": {
@@ -136,7 +143,7 @@
 },
 "com.badlogic.gdx.scenes.scene2d.ui.Label$LabelStyle": {
 	"default": {
-		"font": "font",
+		"font": "HALMA",
 		"fontColor": "white"
 	},
 	"title": {
@@ -202,9 +209,9 @@
 		"parent": "default",
 		"font": "font",
 		"fontColor": "white",
-		"up": "round-gray",
-		"down": "round-dark-gray",
-		"over": "round-light-gray"
+		"up": "WHITE",
+		"down": "WHITE",
+		"over": "WHITE"
 	},
 	"toggle": {
 		"font": "font",
@@ -218,9 +225,9 @@
 	"special": {
 		"font": "title",
 		"fontColor": "black",
-		"up": "round-gray",
-		"down": "round-dark-gray",
-		"over": "round-light-gray"
+		"up": "WHITE",
+		"down": "WHITE",
+		"over": "WHITE"
 	}
 },
 "com.badlogic.gdx.scenes.scene2d.ui.TextField$TextFieldStyle": {

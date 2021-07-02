@@ -1,0 +1,2 @@
+Sedikit perbaikan
+Perbaikan pengaturan fastlane
