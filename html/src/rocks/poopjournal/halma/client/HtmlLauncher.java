@@ -5,10 +5,10 @@ import com.badlogic.gdx.backends.gwt.GwtApplication;
 import com.badlogic.gdx.backends.gwt.GwtApplicationConfiguration;
 import rocks.poopjournal.halma.Halma;
 
-public class HtmlLauncher extends GwtApplication {
+public class HtmlLauncher{
 
         // USE THIS CODE FOR A FIXED SIZE APPLICATION
-        @Override
+        //@Override
         public GwtApplicationConfiguration getConfig () {
                 return new GwtApplicationConfiguration(480, 320);
         }
@@ -44,7 +44,7 @@ public class HtmlLauncher extends GwtApplication {
         // }
         // END OF CODE FOR RESIZABLE APPLICATION
 
-        @Override
+        //@Override
         public ApplicationListener createApplicationListener () {
                 return new Halma();
         }

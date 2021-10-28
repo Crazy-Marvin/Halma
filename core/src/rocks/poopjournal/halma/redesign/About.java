@@ -18,7 +18,7 @@ public class About extends BaseScreen {
     private void create(){
         bgColor = Color.WHITE;
 
-        code = tb("View source code"); code.setColor(Color.GRAY);
+        code = tb("View source code");
         content = new Table(skin);
 
         content.defaults().padRight(stage.getWidth()/20);
@@ -27,7 +27,7 @@ public class About extends BaseScreen {
 
         content.pad(stage.getWidth()/35);
         layout.add(content).row();
-        layout.add(code);
+        layout.add(code).expandX();
 
         addButtonsToListener(code);
         Uncheck.addButtons(code);

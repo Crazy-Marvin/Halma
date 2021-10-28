@@ -38,6 +38,7 @@ allprojects {
         google()
         maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
         maven { url "https://oss.sonatype.org/content/repositories/releases/" }
+        maven { url 'https://jitpack.io' }
     }
 }
 
@@ -118,5 +119,6 @@ project(":core") {
         api "com.badlogicgames.gdx:gdx:$gdxVersion"
         api "com.badlogicgames.gdx:gdx-box2d:$gdxVersion"
         compile "org.mini2Dx:universal-tween-engine:6.3.3"
+        compile 'com.github.raeleus.TenPatch:tenpatch:5.2.2'
     }
 }
