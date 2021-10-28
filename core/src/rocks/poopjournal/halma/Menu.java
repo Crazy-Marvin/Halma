@@ -58,9 +58,20 @@ public class Menu extends BaseScreen {
         layout.add(comCountLabel); layout.row();
         layout.add(com0, com1, com2, com3, com4, com5); layout.row();
         layout.add(squareBoardButton); layout.row();
-        layout.add(startButton);
+        startButton.setPosition(0,0);
+        stage.addActor(startButton);
 
         addButtonsToListener(com0, com1, com2, com3, com4, com5, player2, player3, player4, player5, player6, squareBoardButton, startButton);
+    }
+
+
+    private void layout(){
+
+    }
+
+    @Override
+    public void resize(int width, int height) {
+        super.resize(width, height);
     }
 
     @Override
@@ -91,4 +102,5 @@ public class Menu extends BaseScreen {
         if(computerCount >= playerCount)
             computerCount = playerCount-1;
     }
+
 }

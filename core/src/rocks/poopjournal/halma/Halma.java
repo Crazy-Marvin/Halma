@@ -1,7 +1,7 @@
 package rocks.poopjournal.halma;
 
 import com.badlogic.gdx.Game;
-import rocks.poopjournal.halma.redesign.Menu;
+import rocks.poopjournal.halma.redesign.MainMenu;
 
 import java.util.Locale;
 
@@ -16,7 +16,7 @@ public class Halma extends Game {
 		System.out.println("program start :)");
 		System.out.println("your language is:");
 		System.out.println(Locale.getDefault().toString());
-		setScreen(new Menu(this));
+		setScreen(new MainMenu(this));
 	}
 
 	@Override

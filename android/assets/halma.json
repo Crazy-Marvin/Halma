@@ -81,6 +81,65 @@
 		"color": "white"
 	}
 },
+"com.ray3k.tenpatch.TenPatchDrawable": {
+	"BlueButton10": {
+		"region": "BlueButton",
+		"horizontalStretchAreas": [ 8, 55 ],
+		"verticalStretchAreas": [ 7, 23 ],
+		"tiling": false,
+		"minWidth": 64,
+		"minHeight": 32,
+		"rightWidth": 8,
+		"leftWidth": 8,
+		"bottomHeight": 7,
+		"topHeight": 8,
+		"offsetX": 0,
+		"offsetY": 0,
+		"offsetXspeed": 0,
+		"offsetYspeed": 0,
+		"frameDuration": 0.03,
+		"regions": [],
+		"playMode": 2
+	},
+	"WhiteButton10": {
+		"region": "WhiteButton",
+		"horizontalStretchAreas": [ 8, 55 ],
+		"verticalStretchAreas": [ 7, 23 ],
+		"tiling": false,
+		"minWidth": 64,
+		"minHeight": 32,
+		"rightWidth": 8,
+		"leftWidth": 8,
+		"bottomHeight": 7,
+		"topHeight": 8,
+		"offsetX": 0,
+		"offsetY": 0,
+		"offsetXspeed": 0,
+		"offsetYspeed": 0,
+		"frameDuration": 0.03,
+		"regions": [],
+		"playMode": 2
+	},
+	"GrayButton10": {
+		"region": "GrayButton",
+		"horizontalStretchAreas": [ 8, 55 ],
+		"verticalStretchAreas": [ 7, 23 ],
+		"tiling": false,
+		"minWidth": 64,
+		"minHeight": 32,
+		"rightWidth": 8,
+		"leftWidth": 7,
+		"bottomHeight": 7,
+		"topHeight": 8,
+		"offsetX": 0,
+		"offsetY": 0,
+		"offsetXspeed": 0,
+		"offsetYspeed": 0,
+		"frameDuration": 0.03,
+		"regions": [],
+		"playMode": 2
+	}
+},
 "com.badlogic.gdx.scenes.scene2d.ui.Button$ButtonStyle": {
 	"default": {
 		"up": "WHITE",
@@ -206,12 +265,9 @@
 },
 "com.badlogic.gdx.scenes.scene2d.ui.TextButton$TextButtonStyle": {
 	"default": {
-		"parent": "default",
 		"font": "font",
-		"fontColor": "white",
-		"up": "WHITE",
-		"down": "WHITE",
-		"over": "WHITE"
+		"fontColor": "black",
+		"up": "GrayButton10"
 	},
 	"toggle": {
 		"font": "font",
@@ -228,6 +284,16 @@
 		"up": "WHITE",
 		"down": "WHITE",
 		"over": "WHITE"
+	},
+	"Blue": {
+		"font": "font",
+		"fontColor": "white",
+		"up": "BlueButton10"
+	},
+	"White": {
+		"font": "font",
+		"fontColor": "black",
+		"up": "WhiteButton10"
 	}
 },
 "com.badlogic.gdx.scenes.scene2d.ui.TextField$TextFieldStyle": {
