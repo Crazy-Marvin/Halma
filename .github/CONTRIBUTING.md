@@ -36,7 +36,7 @@ Before creating enhancement suggestions, please check this list as you might fin
 
 ### Pull Requests
 
-+ Include screenshots and animated GIFs in your pull request whenever possible.
++ Include screenshots and animated GIFs in your pull request whenever possible
 + Create a [branch](https://guides.github.com/introduction/flow/) for your edit
     
 ### Git Commit Messages
