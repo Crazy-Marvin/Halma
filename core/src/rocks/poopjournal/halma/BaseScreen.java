@@ -112,4 +112,8 @@ public abstract class BaseScreen extends ScreenAdapter {
         for(Actor a : actors)
             stage.addActor(a);
     }
+    protected String getString(String key) {
+        return halma.getBundle().get(key);
+    }
+
 }

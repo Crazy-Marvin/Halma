@@ -21,16 +21,21 @@ public class PlayConfig extends BaseScreen {
         super(halma);
         bgColor = Color.WHITE;
 
+        // Tables
         settings = new Table(skin); onlineOffline = new Table(skin); boardType = new Table(skin);
         botCountTable = new Table(skin); peopleCountTable = new Table(skin);
 
-        mode = lbl("Mode"); board = lbl("Board"); bots = lbl("Bots");
-        people = lbl("People"); botCount = lbl("1"); peopleCount = lbl("1");
+        // Labels
+        mode = lbl(getString("mode")); board = lbl(getString("board")); bots = lbl(getString("bots"));
+        people = lbl(getString("people")); botCount = lbl("1"); peopleCount = lbl("1");
 
-        online = tb("Online"); offline = tb("Offline"); square = tb("Square");
-        star = tb("Star"); botUp = new Image(skin, "Plus"); botDown = new Image(skin, "Minus");
+        // TextButtons
+        online = tb(getString("online")); offline = tb(getString("offline")); square = tb(getString("square"));
+        star = tb(getString("star")); startButton = tb(getString("startGame"), "Blue");
+
+        // Images
+        botUp = new Image(skin, "Plus"); botDown = new Image(skin, "Minus");
         peopleUp = new Image(skin, "Plus"); peopleDown = new Image(skin, "Minus");
-        startButton = tb("Start Game", "Blue");
 
         settings.pad(stage.getWidth()/20);
         settings.defaults().pad(stage.getWidth()/40);

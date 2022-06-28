@@ -18,12 +18,14 @@ public class About extends BaseScreen {
     private void create(){
         bgColor = Color.WHITE;
 
-        code = tb("View source code");
+        code = tb(getString("viewSource"));
         content = new Table(skin);
 
         content.defaults().padRight(stage.getWidth()/20);
-        content.add(lbl("Lead developer:"), lbl("Marvin")).row();
-        content.add(lbl("Co-developer:"), lbl("Martin"));
+        String[] leadDev = getString("leadDev").split(":");
+        content.add(lbl(leadDev[0] + ":"), lbl(leadDev[1])).row();
+        String[] coDev = getString("coDev").split(":");
+        content.add(lbl(coDev[0] + ":"), lbl(coDev[1]));
 
         content.pad(stage.getWidth()/35);
         layout.add(content).row();
@@ -45,6 +47,6 @@ public class About extends BaseScreen {
 
     @Override
     public void clicked(Actor a) {
-        if(code == a) Gdx.net.openURI("https://github.com/Crazy-Marvin/Halma");
+        if(code == a) Gdx.net.openURI(getString("repo"));
     }
 }
