@@ -23,9 +23,9 @@ public class MainMenu extends BaseScreen {
     private void create(){
         this.bgColor = Color.WHITE;
         icon = new Image(new Texture("redesign/ic_foreground.png")); icon.setScaling(Scaling.fit);
-        newGame = new TextButton("New game", skin, "Blue");
-        about = new TextButton("About", skin, "default");
-        help = new TextButton("Help", skin, "default");
+        newGame = new TextButton(getString("newGame"), skin, "Blue");
+        about = new TextButton(getString("about"), skin, "default");
+        help = new TextButton(getString("help"), skin, "default");
 
         addActorsToStage(icon, newGame, about, help);
         addButtonsToListener(help, about, newGame);

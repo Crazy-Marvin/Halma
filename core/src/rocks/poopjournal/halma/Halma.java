@@ -1,37 +1,33 @@
 package rocks.poopjournal.halma;
 
 import com.badlogic.gdx.Game;
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.utils.I18NBundle;
+
 import rocks.poopjournal.halma.redesign.MainMenu;
 
 import java.util.Locale;
 
 public class Halma extends Game {
-	/*SpriteBatch batch;
-	Texture img;*/
+
+	private I18NBundle bundle;
 	
 	@Override
 	public void create () {
-		/*batch = new SpriteBatch();
-		img = new Texture("badlogic.jpg");*/
 		System.out.println("program start :)");
+
+		// Override to specific language with new Locale("de"), "en", etc.
+		Locale locale = Locale.getDefault();
 		System.out.println("your language is:");
-		System.out.println(Locale.getDefault().toString());
+		System.out.println(locale);
+		I18NBundle.setSimpleFormatter(true); // Ensure same behaviour on GWT and other platforms
+		bundle = I18NBundle.createBundle(Gdx.files.internal("strings"), locale);
+
 		setScreen(new MainMenu(this));
 	}
 
-	@Override
-	public void render () {
-		/*Gdx.gl.glClearColor(1, 0, 0, 1);
-		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-		batch.begin();
-		batch.draw(img, 0, 0);
-		batch.end();*/
-		super.render();
+	I18NBundle getBundle() {
+		return bundle;
 	}
 
-	@Override
-	public void dispose () {
-		/*batch.dispose();
-		img.dispose();*/
-	}
 }
