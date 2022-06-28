@@ -31,7 +31,7 @@ public class PlayConfig extends BaseScreen {
 
         // TextButtons
         online = tb(getString("online")); offline = tb(getString("offline")); square = tb(getString("square"));
-        star = tb(getString("star")); startButton = tb(getString("start"), "Blue");
+        star = tb(getString("star")); startButton = tb(getString("startGame"), "Blue");
 
         // Images
         botUp = new Image(skin, "Plus"); botDown = new Image(skin, "Minus");
