@@ -21,7 +21,7 @@ public class Halma extends Game {
 		System.out.println("your language is:");
 		System.out.println(locale);
 		I18NBundle.setSimpleFormatter(true); // Ensure same behaviour on GWT and other platforms
-		bundle = I18NBundle.createBundle(Gdx.files.internal("strings"), locale);
+		bundle = I18NBundle.createBundle(Gdx.files.internal("strings"), locale, "ISO-8859-1");
 
 		setScreen(new MainMenu(this));
 	}
