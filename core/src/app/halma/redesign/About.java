@@ -49,6 +49,6 @@ public class About extends BaseScreen {
 
     @Override
     public void clicked(Actor a) {
-        if(code == a) Gdx.net.openURI(getString("repo"));
+        if(code == a) Gdx.net.openURI(getString("repoURL"));
     }
 }
