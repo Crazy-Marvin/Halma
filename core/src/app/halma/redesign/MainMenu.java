@@ -33,7 +33,7 @@ public class MainMenu extends BaseScreen {
         layout();
     }
     private void layout(){
-        setBounds(icon, 272, 172, 176, 176); icon.debug();
+        setBounds(icon, 272, 172, 176, 176);
         setBounds(newGame, 204, 72, 312, 36);
         setBounds(about, 204, 24, 152, 36);
         setBounds(help, 364, 24, 152, 36);

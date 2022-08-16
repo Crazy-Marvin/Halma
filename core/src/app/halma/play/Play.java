@@ -1,6 +1,7 @@
 package app.halma.play;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import app.halma.BaseScreen;
 import app.halma.ResultScreen;
@@ -34,6 +35,7 @@ public class Play extends BaseScreen {
         this.isSquare = isSquare;
     }
     private void create(){
+        bgColor = Color.WHITE;
         System.out.println("so viele spieler: " + playerCount + " davon " + coms + " coms und spielfeld eckig = " + isSquare);
         this.players = new LinkedList<>();
         PlayColorManager.maxPlayer = playerCount;
@@ -66,6 +68,15 @@ public class Play extends BaseScreen {
             currentPlayerIndex = 0;
         currentPlayerLabel.setText(players.get(currentPlayerIndex).getName());
         play();
+    }
+
+    @Override
+    public void resize(int width, int height) {
+        super.resize(width, height);
+        for(Field field : board.getFields()){
+            field.layoutChanged();
+        }
+        board.getFieldGroup().layoutChanged(width, height);
     }
 
     //getter and setter

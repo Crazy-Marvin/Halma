@@ -4,7 +4,13 @@ import com.badlogic.gdx.scenes.scene2d.Group;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 
 public class FieldGroup extends Group {
+
     public FieldGroup(float width, float height, Stage stage) {
+        layoutChanged(width, height);
+        stage.addActor(this);
+    }
+
+    public void layoutChanged(float width, float height) {
         float boardHeight = 0;
         float boardWidth = 0;
         if (!Board.isSquare) {
@@ -21,6 +27,6 @@ public class FieldGroup extends Group {
         //du weißt die genaue größe des boards
         //und du weißt die genaue größe des screens
         super.setBounds(width/2 - boardWidth/2, height/2 - boardHeight/2, width,height);
-        stage.addActor(this);
     }
+
 }

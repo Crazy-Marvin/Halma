@@ -52,7 +52,7 @@ public class PlayConfig extends BaseScreen {
 
         Uncheck.addButtons(botUp, peopleUp, botDown, peopleDown, square, star, online, offline);
 
-        counter = new PlayerCounter(botCount, peopleCount, true);
+        counter = new PlayerCounter(botCount, peopleCount, false);
 
         addGrayBorder(onlineOffline); addGrayBorder(boardType); addGrayBorder(botCountTable); addGrayBorder(peopleCountTable);
 

@@ -20,16 +20,18 @@ public class Field extends Image {
     private Field up, down, left, right, upRight, upLeft, downLeft, downRight;
     private LinkedList<Field> neighbours = new LinkedList<>();
     private static int jumpCount = 0;
+    public static Color baseColor = new Color(0.9f, 0.9f, 0.9f, 1);
+    public static Color possibleColor = Color.LIGHT_GRAY;
     //constructor
     public Field(Vector2 pos) {
-        super(new Texture("Field.png"));
+        super(new Texture("circle.png"));
         this.pos = pos;
         posTemp = pos;
         layoutChanged();
         colorChanged();
+        setScale(1.5f);
         this.addListener(listener);
-        this.scaleBy(0.5f);
-        debug();
+        this.setColor(baseColor);
     }
     public Field(float x, float y) {
         this(new Vector2(x,y));
@@ -40,14 +42,14 @@ public class Field extends Image {
     }
     public void colorChanged(){
         switch(colorChar){
-            case NONE: setColor(Color.WHITE); break;
+            case NONE: setColor(baseColor); break;
             case BLACK: setColor(Color.BLACK); break;
             case BLUE: setColor(Color.BLUE); break;
             case GREEN: setColor(Color.GREEN); break;
             case LILA: setColor(Color.PURPLE); break;
             case RED: setColor(Color.RED); break;
             case YELLOW: setColor(Color.YELLOW); break;
-            case POSSIBLE: setColor(new Color(1,1,1, 0.25f)); break;
+            case POSSIBLE: setColor(possibleColor); break;
         }
     }
     @Override

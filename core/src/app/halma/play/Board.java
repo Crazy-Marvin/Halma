@@ -19,6 +19,7 @@ public class Board {
     public LinkedList<Field> lowerRight = new LinkedList();
     public LinkedList<Field> lowerLeft = new LinkedList();
     public LinkedList<Field> lower = new LinkedList();
+    private BaseBackground baseColors;
 
     public Board(boolean isSquare, Stage stage){
         this.stage = stage;
@@ -28,6 +29,7 @@ public class Board {
         if(isSquare)createSquare();
         else createStar();
         fieldGroup = new FieldGroup(stage.getWidth(), stage.getHeight(), stage);
+        baseColors = new BaseBackground(this);
         for(Field f : fields) {
             fieldGroup.addActor(f);
             f.createNeighbours();
@@ -232,4 +234,5 @@ public class Board {
     public void setColorFields(LinkedList<LinkedList<Field>> colorFields) {this.colorFields = colorFields;}
     public boolean isSquare() {return isSquare;}
     public void setSquare(boolean square) {isSquare = square;}
+    public FieldGroup getFieldGroup() {return fieldGroup;}
 }
