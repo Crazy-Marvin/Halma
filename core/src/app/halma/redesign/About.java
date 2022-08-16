@@ -4,6 +4,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.ui.*;
+
 import app.halma.BaseScreen;
 import app.halma.Halma;
 import app.halma.Uncheck;
@@ -22,9 +23,9 @@ public class About extends BaseScreen {
         content = new Table(skin);
 
         content.defaults().padRight(stage.getWidth()/20);
-        String[] leadDev = getString("leadDev").split(":");
+        String[] leadDev = getString("director").split(":");
         content.add(lbl(leadDev[0] + ":"), lbl(leadDev[1])).row();
-        String[] coDev = getString("coDev").split(":");
+        String[] coDev = getString("leadDev").split(":");
         content.add(lbl(coDev[0] + ":"), lbl(coDev[1]));
 
         content.pad(stage.getWidth()/35);
@@ -47,6 +48,6 @@ public class About extends BaseScreen {
 
     @Override
     public void clicked(Actor a) {
-        if(code == a) Gdx.net.openURI(getString("repo"));
+        if(code == a) Gdx.net.openURI(getString("repoURL"));
     }
 }
