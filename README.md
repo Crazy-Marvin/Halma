@@ -10,19 +10,19 @@
 [![Hosted Weblate](https://hosted.weblate.org/widgets/halma/-/svg-badge.svg)](https://hosted.weblate.org/engage/halma/)
 [![Known Vulnerabilities](https://img.shields.io/snyk/vulnerabilities/github/Crazy-Marvin/Halma)](https://snyk.io/)
 [![API](https://img.shields.io/badge/API-19%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=19)
-[![F-Droid](https://img.shields.io/f-droid/v/rocks.poopjournal.halma.svg)](https://f-droid.org/en/packages/rocks.poopjournal.halma/)
-[![Google Play](https://badgen.net/badge/icon/googleplay?icon=googleplay&label)](https://play.google.com/store/apps/details?id=rocks.poopjournal.halma)
+[![F-Droid](https://img.shields.io/f-droid/v/rocks.poopjournal.halma.svg)](https://f-droid.org/en/packages/app.halma/)
+[![Google Play](https://badgen.net/badge/icon/googleplay?icon=googleplay&label)](https://play.google.com/store/apps/details?id=app.halma)
 
 # Halma
 
 This is the Halma game built with the awesome [libGDX](https://libgdx.com/) framework. It is optimized for Android and the web.
 
-<a href="https://f-droid.org/packages/rocks.poopjournal.halma/">
+<a href="https://f-droid.org/packages/app.halma/">
     <img alt="Get it on F-Droid"
         height="80"
         src="https://user-images.githubusercontent.com/15004217/36919296-19b8524e-1e5d-11e8-8962-48463b1cec8a.png" />
         </a>
-<a href="https://play.google.com/store/apps/details?id=rocks.poopjournal.halma">
+<a href="https://play.google.com/store/apps/details?id=app.halma">
     <img alt="Get it on Google Play"
         height="80"
         src="https://user-images.githubusercontent.com/15004217/36810046-fa306856-1cc9-11e8-808e-6eb8a81783c7.png" />
