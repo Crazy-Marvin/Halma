@@ -8,7 +8,7 @@
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/1bc4318b13c04d6d994fca383e9a1bee)](https://www.codacy.com/gh/Crazy-Marvin/Halma/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Crazy-Marvin/Halma&amp;utm_campaign=Badge_Grade)
 [![codecov](https://codecov.io/gh/Crazy-Marvin/Halma/branch/master/graph/badge.svg?token=sErYkIqHmc)](https://codecov.io/gh/Crazy-Marvin/Halma)
 [![Hosted Weblate](https://hosted.weblate.org/widgets/halma/-/svg-badge.svg)](https://hosted.weblate.org/engage/halma/)
-![Known Vulnerabilities](https://snyk.io/test/github/Crazy-Marvin/Halma/badge.svg)
+[![Known Vulnerabilities](https://img.shields.io/snyk/vulnerabilities/github/Crazy-Marvin/Halma)](https://snyk.io/)
 [![API](https://img.shields.io/badge/API-19%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=19)
 [![F-Droid](https://img.shields.io/f-droid/v/rocks.poopjournal.halma.svg)](https://f-droid.org/en/packages/rocks.poopjournal.halma/)
 [![Google Play](https://badgen.net/badge/icon/googleplay?icon=googleplay&label)](https://play.google.com/store/apps/details?id=rocks.poopjournal.halma)
