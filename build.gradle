@@ -9,7 +9,7 @@ buildscript {
     }
     dependencies {
         classpath 'org.wisepersist:gwt-gradle-plugin:1.1.16'
-        classpath 'org.gretty:gretty:3.0.7'
+        classpath 'org.gretty:gretty:3.0.8'
         classpath 'com.android.tools.build:gradle:7.2.2'
 
     }
