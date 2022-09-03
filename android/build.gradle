@@ -20,8 +20,8 @@ android {
         applicationId "app.halma"
         minSdkVersion 14
         targetSdkVersion 31
-        versionCode 6
-        versionName "6.0"
+        versionCode 7
+        versionName "7.0"
     }
     buildTypes {
         release {
