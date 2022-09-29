@@ -1,0 +1,5 @@
+- Use I18NBundle for strings (#30)
+- Regenerate the project for libGDX 1.11.0 (#36)
+- Dependency updates
+- Removed unused parts
+- Many other improvements
