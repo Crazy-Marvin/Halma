@@ -13,7 +13,6 @@ If you are looking to improve concentration skills and challenges your puzzle-so
 there is a wide range of players ranging from novices to professionals.
 The aim is to be the best experience on Android and the web for all types of players, with the best support.
 
-    • No ads.
     • Clean design with a fresh and intuitive interface.
     • Tablet mode.
     • High-quality graphics with smooth animations.
@@ -23,7 +22,6 @@ The aim is to be the best experience on Android and the web for all types of pla
     • 1-6 players.
     • Human or AI (computer) players.
     • Online multiplayer mode. (Soon. 😅)
-    • All ages.
     
 Let us know if you find bugs, have questions, feature requests, or any other suggestions please.
 
