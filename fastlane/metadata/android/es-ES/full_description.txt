@@ -1,0 +1,30 @@
+El juego Halma original y el Sternhalma simplificado (damas chinas) en una sola aplicación.
+Sé el primero en colocar tus fichas sobre el tablero en este juego de estrategia.
+Disfruta del tradicional tablero Halma de 16x16, o utiliza la variante moderna de Sternhalma (damas chinas).
+Diviértete jugando solo conntra la máquina o con una, dos, tres, cuatro o cinco personas de forma local u online.
+
+Se pueden usar varias estrategias, y conocer un par de trucos de la jugada inicial ayuda.
+Apunta a la línea central, avanza desde los lados o encuentra tu propia estrategia.
+Las posibilidades son infinitas.
+
+Es un juego estupendo para jugar con la familia y los amigos.
+Disfruta de tu tiempo libre y mejora tus habilidades para resolver puzzles.
+Si buscas mejorar tu capacidad de concentración y desafiar tus habilidades para resolver puzzles,
+hay una gran variedad de jugadores, desde principiantes hasta profesionales.
+El objetivo es que sea la mejor experiencia en Android y en la web para todo tipo de jugadores, con el mejor soporte.
+
+    - Diseño limpio con una interfaz fresca e intuitiva.
+    - Modo tableta.
+    - Gráficos de alta calidad con animaciones suaves.
+    - Tradicional 16x16 y las variantes de damas chinas.
+    • Software libre (open source).
+    • Juego Gratuito, sin compras, todo desbloqueado. (Posibles Donaciones. 😉)
+    • Desde 1 a 6 jugadores.
+    • Jugadores humanos o IA (computadora).
+    • Juego online. (Pronto. 😅)
+    
+Háganos saber si encuentra errores, tiene preguntas, solicitudes de nuevas funciones o cualquier otra sugerencia.
+
+Página web: <a href="https://www.crazymarvin.com/halma">https://www.crazymarvin.com/halma</a>
+Tradúzcalo en Hosted Weblate: <a href="https://hosted.weblate.org/engage/halma/">https://hosted.weblate.org/engage/halma/</a>
+Código fuente del juego: <a href="https://github.com/Crazy-Marvin/Halma">https://github.com/Crazy-Marvin/Halma</a>

@@ -1,0 +1,5 @@
+- Usar I18NBundle para cadenas (#30)
+- Regenerar el proyecto para libGDX 1.11.0 (#36)
+- Actualizaciones de dependencias
+- Eliminadas partes no utilizadas
+- Muchas otras mejoras
