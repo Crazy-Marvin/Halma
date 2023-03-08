@@ -8,7 +8,9 @@ import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 
+import java.util.HashSet;
 import java.util.LinkedList;
+import java.util.Set;
 
 public class Field extends Image {
     //variables
@@ -33,6 +35,7 @@ public class Field extends Image {
         this.addListener(listener);
         this.setColor(baseColor);
     }
+    private Set<Field> jumpedFields = new HashSet<>();
     public Field(float x, float y) {
         this(new Vector2(x,y));
     }
@@ -91,6 +94,11 @@ public class Field extends Image {
         jumpCount = 0;
     }
     public void jump(Field neighbour) {
+        if (jumpedFields.contains(neighbour)) {
+            jumpedFields.clear();
+            return;
+        }
+        jumpedFields.add(neighbour);
         if(jumpCount>10_000) return;
         jumpCount++;
         LinkedList<Field> nextNeighbours = neighbour.neighbours; //die nachbarn von dem Feld, das besetzt ist
