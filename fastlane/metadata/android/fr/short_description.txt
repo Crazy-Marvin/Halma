@@ -1,1 +1,0 @@
-Jeu d'échec chinois (Halma) à jouer entre amis. Essayez-le maintenant !

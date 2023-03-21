@@ -1,2 +1,0 @@
-Kleine Verbesserungen unter der Haube
-Fastlane-Einrichtung korrigiert

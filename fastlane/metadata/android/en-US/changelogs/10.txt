@@ -1,6 +1,0 @@
-- Add web support 🕸️
-- Bug fixes 🐛
-- Performance improvements 🚀
-
-Please feel welcome to open issues on https://github.com/Crazy-Marvin/Halma and help with translations on https://hosted.weblate.org/engage/halma/.
-Thank you very much to all contributors! 😘

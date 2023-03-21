@@ -1,0 +1,13 @@
+
+text.png
+size: 512, 512
+format: RGBA8888
+filter: Linear, Linear
+repeat: none
+unifont-15.0.01
+  rotate: false
+  xy: 1, 437
+  size: 506, 68
+  orig: 506, 68
+  offset: 0, 0
+  index: -1

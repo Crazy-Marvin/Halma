@@ -1,2 +1,0 @@
-Små osynliga förbättringar
-Fungerande fastlane

@@ -1,2 +1,0 @@
-Pequeñas mejoras invisibles
-Arreglar la configuración de fastlane

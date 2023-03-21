@@ -1,1 +1,0 @@
-- Switch to a new font which supports "special" characters from languages like Ukrainian, Chinese, Japanese, Urdu, German (ä, ü, ö, ß...), Indian languages etc. 🎨

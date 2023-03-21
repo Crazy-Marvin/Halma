@@ -1,2 +1,0 @@
-Små usynlige forbedringer
-Fungerende fastlane-oppsett
