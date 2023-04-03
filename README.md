@@ -12,6 +12,10 @@
 [![API](https://img.shields.io/badge/API-19%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=19)
 [![F-Droid](https://img.shields.io/f-droid/v/rocks.poopjournal.halma.svg)](https://f-droid.org/en/packages/app.halma/)
 [![Google Play](https://badgen.net/badge/icon/googleplay?icon=googleplay&label)](https://play.google.com/store/apps/details?id=app.halma)
+[![Halma.app PingPing](https://img.shields.io/badge/Ping-blue?logo=pingping)](https://ping.sneak.page/)
+[![Halma.app updwown.io](https://img.shields.io/badge/Uptime-gray?logo=updown)](https://up.sneak.page/)
+[![Website](https://badgen.net/badge/icon/website?icon=firefox&label)](https://halma.app/)
+[![Halma Status](https://img.shields.io/badge/Status-black?logo=ohdear)](https://status.halma.app/)
 
 # Halma
 
