@@ -1,0 +1,4 @@
+- Target Android 13 (requisito de Google)
+
+Sie bienvenido a abrir problemas en https://github.com/Crazy-Marvin/Halma y ayuda con las traducciones en https://hosted.weblate.org/engage/halma/.
+¡Muchas gracias a todos los colaboradores! 😘
