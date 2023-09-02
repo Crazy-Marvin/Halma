@@ -21,7 +21,7 @@ allprojects {
     version = '1.0'
     ext {
         appName = "Halma"
-        gdxVersion = '1.11.0'
+        gdxVersion = '1.12.0'
         
     }
 
