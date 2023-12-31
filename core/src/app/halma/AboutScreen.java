@@ -76,7 +76,7 @@ public class AboutScreen extends BaseScreen{
         if (a == helpWIthTranslation)
             link = "https://hosted.weblate.org/engage/halma/";
         if (a == termsOfService)
-            link = "https://github.com/Crazy-Marvin/Halma/blob/trunk/.github/CONTACT.md";
+            link = "https://github.com/Crazy-Marvin/Halma/blob/development/LICENSE";
         if (a == privacyPolicy)
             link = "https://github.com/Crazy-Marvin/Halma/blob/trunk/.github/CONTACT.md";
         if(a == viewSource)
