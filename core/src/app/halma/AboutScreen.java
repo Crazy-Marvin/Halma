@@ -49,7 +49,6 @@ public class AboutScreen extends BaseScreen{
         persons.add(linkToMarvin).row();
         persons.add(linkToMartin).row();
         persons.add(helpWithTranslation);
-        persons.add(termsOfService);
         persons.add(privacyPolicy);
         persons.add(viewSource).row();
         persons.add(reportProblem);
