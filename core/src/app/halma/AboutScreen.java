@@ -16,8 +16,7 @@ public class AboutScreen extends BaseScreen{
     Label linkToMartin;
     Label viewSource;
     Label reportProblem;
-    Label helpWIthTranslation;
-    Label termsOfService;
+    Label helpWithTranslation;
     Label privacyPolicy;
 
     Table persons;
@@ -36,8 +35,7 @@ public class AboutScreen extends BaseScreen{
         titleImage = new Image(skin, "earth");
         linkToMarvin = new Label("marvin, main developer", skin); linkToMarvin.setColor(Color.BLUE);
         linkToMartin = new Label("martin, co developer", skin); linkToMartin.setColor(Color.BLUE);
-        helpWIthTranslation = new Label("Help with translaiton", skin); linkToMarvin.setColor(Color.BLUE);
-        termsOfService = new Label("Terms Of Service", skin); linkToMarvin.setColor(Color.BLUE);
+        helpWithTranslation = new Label("Help with translaiton", skin); linkToMarvin.setColor(Color.BLUE);
         privacyPolicy = new Label("Privacy Policy", skin); linkToMarvin.setColor(Color.BLUE);
         viewSource = new Label("100% transparent, view source code", skin); viewSource.setColor(Color.BLUE);
         reportProblem = new Label("I found a problem, help us making the game better :)", skin); reportProblem.setColor(Color.BLUE);
@@ -50,7 +48,7 @@ public class AboutScreen extends BaseScreen{
 
         persons.add(linkToMarvin).row();
         persons.add(linkToMartin).row();
-        persons.add(helpWIthTranslation);
+        persons.add(helpWithTranslation);
         persons.add(termsOfService);
         persons.add(privacyPolicy);
         persons.add(viewSource).row();
@@ -75,10 +73,8 @@ public class AboutScreen extends BaseScreen{
             link = "https://github.com/Crazy-Marvin";
         if (a == helpWIthTranslation)
             link = "https://hosted.weblate.org/engage/halma/";
-        if (a == termsOfService)
-            link = "https://github.com/Crazy-Marvin/Halma/blob/development/LICENSE";
         if (a == privacyPolicy)
-            link = "https://github.com/Crazy-Marvin/Halma/blob/trunk/.github/CONTACT.md";
+            link = "https://app.getterms.io/view/7FsFk/privacy/en-us";
         if(a == viewSource)
             link = "https://github.com/Crazy-Marvin/Halma";
         if(a == reportProblem)
