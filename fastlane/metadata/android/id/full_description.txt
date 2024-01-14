@@ -1,0 +1,27 @@
+Game Halma asli dan Sternhalma (Catur Cina) yang disederhanakan dalam satu aplikasi. 
+Jadilah pemain pertama yang meloloskan bidak-bidak Anda ke seluruh papan di game papan strategi ini. 
+Nikmati papan Halma 16x16 tradisional, atau gunakan varian Sternhalma (Catur Cina) modern. 
+Bersenang-senanglah bermain sendiri dengan AI atau dengan satu, dua, tiga, empat, atau lima orang lain secara lokal atau online.
+
+Beberapa strategi dapat digunakan, dan mengetahui beberapa trik gerakan pembuka akan membantu. 
+Bidik garis tengah, bergerak dari dalam ke luar, atau temukan strategi Anda sendiri. 
+Kemungkinannya tidak terbatas.
+
+Ini adalah permainan yang bagus untuk dimainkan bersama keluarga dan teman. 
+Nikmati waktu luang Anda dan tingkatkan kemampuan memecahkan teka-teki Anda. 
+Jika Anda ingin meningkatkan kemampuan konsentrasi dan menantang kemampuan memecahkan teka-teki Anda, ada berbagai macam pemain mulai dari pemula hingga profesional. 
+Tujuannya adalah untuk menjadi pengalaman terbaik di Android dan web untuk semua jenis pemain, dengan dukungan terbaik.
+
+- Desain yang bersih dengan antarmuka yang segar dan intuitif. 
+- Mode tablet. 
+- Grafis berkualitas tinggi dengan animasi. 
+- Varian tradisional 16x16 dan catur Cina. 
+- Perangkat lunak bebas (open source). 
+- Gratis untuk dimainkan, tidak ada pembelian, semuanya tidak dikunci. (Donasi dimungkinkan. 😉) 
+- 1-6 pemain. 
+- Pemain manusia atau AI (komputer). 
+- Mode multipemain daring. (Segera. 😅)
+    
+Beritahu kami jika Anda menemukan bug, memiliki pertanyaan, permintaan fitur, atau saran lainnya.
+
+Halaman web: <a href="https://www.crazymarvin.com/halma">https://www.crazymarvin.com/halma</a> Terjemahkan di Hosted Weblate: <a href="https://hosted.weblate.org/engage/halma/">https://hosted.weblate.org/engage/halma/</a> Perangkat lunak bebas di GitHub: <a href="https://github.com/Crazy-Marvin/Halma">https://github.com/Crazy-Marvin/Halma</a>
