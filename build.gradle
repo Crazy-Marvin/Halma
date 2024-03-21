@@ -1,4 +1,4 @@
-buildscript {    
+buildscript {
 
     repositories {
         mavenLocal()
@@ -22,7 +22,7 @@ allprojects {
     ext {
         appName = "Halma"
         gdxVersion = '1.12.1'
-        
+
     }
 
     repositories {
@@ -44,7 +44,7 @@ project(":desktop") {
         implementation project(":core")
         api "com.badlogicgames.gdx:gdx-backend-lwjgl3:$gdxVersion"
         api "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-desktop"
-        
+
     }
 }
 
@@ -60,7 +60,7 @@ project(":android") {
         natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-arm64-v8a"
         natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-x86"
         natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-x86_64"
-        
+
     }
 }
 
@@ -88,5 +88,6 @@ project(":core") {
     dependencies {
         api "com.badlogicgames.gdx:gdx:$gdxVersion"
         implementation 'com.github.raeleus.TenPatch:tenpatch:5.2.3'
+        implementation 'io.sentry:sentry:7.4.0'
     }
 }
