@@ -23,7 +23,7 @@ public class Board {
 
     public Board(boolean isSquare, Stage stage){
         this.stage = stage;
-        this.isSquare = isSquare;
+        Board.isSquare = isSquare;
     }
     public Board create(){
         if(isSquare)createSquare();
