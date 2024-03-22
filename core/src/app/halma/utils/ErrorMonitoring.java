@@ -6,11 +6,11 @@ import io.sentry.SentryLevel;
 public class ErrorMonitoring {
     public static void init() {
         Sentry.init(options -> {
-            options.setDsn("https://46f71f9d000c4ee6ac65f25f9a81b153@o282785.ingest.sentry.io/1509904");
+            options.setDsn("https://378ae0f63eb29c1e801856858805a0f9@o282785.ingest.us.sentry.io/4506740692811776");
 
             // Configure the background worker which sends events to sentry:
             // Wait up to 5 seconds before shutdown while there are events to send.
-            options.setShutdownTimeout(5000);
+            options.setShutdownTimeoutMillis(5000);
 
             // Enable SDK logging with Debug level
             options.setDebug(true);
