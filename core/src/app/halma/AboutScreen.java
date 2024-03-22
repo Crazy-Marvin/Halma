@@ -70,8 +70,8 @@ public class AboutScreen extends BaseScreen{
             link = "https://github.com/mmelnizky";
         if(a == linkToMarvin)
             link = "https://github.com/Crazy-Marvin";
-        if (a == helpWIthTranslation)
-            link = "https://hosted.weblate.org/engage/halma/";
+//        if (a == helpWIthTranslation)
+//            link = "https://hosted.weblate.org/engage/halma/";
         if (a == privacyPolicy)
             link = "https://app.getterms.io/view/7FsFk/privacy/en-us";
         if(a == viewSource)
