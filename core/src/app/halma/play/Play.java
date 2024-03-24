@@ -1,11 +1,11 @@
 package app.halma.play;
 
+import app.halma.BaseScreen;
+import app.halma.Halma;
+import app.halma.ResultScreen;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
-import app.halma.BaseScreen;
-import app.halma.ResultScreen;
-import app.halma.Halma;
 
 import java.util.LinkedList;
 
