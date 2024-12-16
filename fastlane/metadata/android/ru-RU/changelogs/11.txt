@@ -1,0 +1,5 @@
+- Целевой Android 13 (требование от Google)
+
+Пожалуйста, не стесняйтесь открывать проблемы на https://github.com/Crazy-Marvin/Halma и помогать с переводами на https://hosted.weblate.org/engage/halma/.
+
+Большое спасибо всем вкладчикам! 😘
