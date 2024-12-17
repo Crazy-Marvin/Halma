@@ -1,0 +1,5 @@
+- Errores corregidos 🐛
+- Traducciones actualizadas 🗺️
+
+No dudes en abrir problemas en https://github.com/Crazy-Marvin/Halma y ayudar con las traducciones en https://hosted.weblate.org/engage/halma/.
+¡Muchas gracias a todos los colaboradores! 😘
