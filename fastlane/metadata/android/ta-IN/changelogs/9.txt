@@ -1,0 +1,1 @@
+- ஆளி, நிலைமாறி பெறுநர் a புதிய font which supports "special" எழுத்துக்கள் இருந்து மொழிகள் like Ukrainian, Chinese, Japanese, Urdu, செர்மன் (ä, ü, ö, ß...), Indian மொழிகள் etc. 🎨
