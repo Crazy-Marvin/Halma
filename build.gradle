@@ -88,6 +88,6 @@ project(":core") {
     dependencies {
         api "com.badlogicgames.gdx:gdx:$gdxVersion"
         implementation 'com.github.raeleus.TenPatch:tenpatch:5.2.3'
-        implementation 'io.sentry:sentry:8.1.0'
+        implementation 'io.sentry:sentry:8.3.0'
     }
 }
