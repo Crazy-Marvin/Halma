@@ -1,6 +1,5 @@
 package app.halma.utils;
 
-import app.halma.Halma;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Preferences;
 

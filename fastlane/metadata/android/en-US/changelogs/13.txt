@@ -1,6 +1,4 @@
-- Update About Page ℹ️
-- Optimize Computer Play 🤖
-- Optional Error & Performance Monitoring 💡
+- Updated Translations 🗺️
 
 Please feel welcome to open issues on https://github.com/Crazy-Marvin/Halma and help with translations on https://hosted.weblate.org/engage/halma/.
 Thank you very much to all contributors! 😘

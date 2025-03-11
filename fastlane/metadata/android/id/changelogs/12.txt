@@ -1,4 +1,6 @@
--
+- Perbarui Halaman Tentang ℹ️ 
+- Pengoptimalan Permainan Komputer 🤖 
+- Pemantauan error & Performa Opsional 💡
 
 Silakan membuka issue di https://github.com/Crazy-Marvin/Halma dan membantu menerjemahkan di https://hosted.weblate.org/engage/halma/. 
 Terima kasih banyak untuk semua kontributor! 😘

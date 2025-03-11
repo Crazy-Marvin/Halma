@@ -14,8 +14,6 @@ import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.ui.*;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
-import io.sentry.Sentry;
-import io.sentry.SentryLevel;
 
 public class Settings extends BaseScreen {
     // Difficulty Buttons

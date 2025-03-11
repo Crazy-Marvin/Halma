@@ -1,5 +1,0 @@
-- Menambahkan dukungan web 🕸️ 
-- Perbaikan bug 🐛
-- Peningkatan kinerja 🚀
-
-Silakan buka issue di https://github.com/Crazy-Marvin/Halma dan bantu menerjemahkan di https://hosted.weblate.org/engage/halma/. Terima kasih banyak kepada semua kontributor! 😘

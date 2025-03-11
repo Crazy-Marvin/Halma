@@ -18,7 +18,8 @@ public class PlayerCounter {
 
     public void update(int bots, int people, boolean square){
         if(people <= 0) return;
-        if(bots <= 0) return;
+        if(bots < 0) return;
+        if(bots == 0 && people <= 1) return;
         if(square){
             if(people + bots > 4)
                 if(!this.square){bots = 1; people = 1;} //too much players!

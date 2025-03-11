@@ -1,5 +1,8 @@
 package app.halma.redesign;
 
+import app.halma.BaseScreen;
+import app.halma.Halma;
+import app.halma.RulesScreen;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.math.Vector2;
@@ -7,10 +10,6 @@ import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.utils.Scaling;
-
-import app.halma.BaseScreen;
-import app.halma.Halma;
-import app.halma.RulesScreen;
 
 public class MainMenu extends BaseScreen {
     //variables
