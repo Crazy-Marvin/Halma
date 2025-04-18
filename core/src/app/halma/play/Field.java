@@ -14,18 +14,16 @@ import java.util.Set;
 
 public class Field extends Image {
     //variables
-    private final int retry_threshold = 500;
     public final static char BLACK = 'l', LILA = 'h', GREEN = 'g', RED = 'r', BLUE = 'b', YELLOW = 'w', NONE = 'N', POSSIBLE = 'p';
     private Vector2 pos, posTemp;
     private char colorChar = NONE, colorCharTemp = NONE;
-    public static float size = Gdx.graphics.getHeight() / 35;
+    public static float size=Gdx.graphics.getHeight()/35;
     private Listener listener = new Listener();
     private Field up, down, left, right, upRight, upLeft, downLeft, downRight;
     private LinkedList<Field> neighbours = new LinkedList<>();
     private static int jumpCount = 0;
     public static Color baseColor = new Color(0.9f, 0.9f, 0.9f, 1);
     public static Color possibleColor = Color.LIGHT_GRAY;
-
     //constructor
     public Field(Vector2 pos) {
         super(new Texture("circle.png"));
@@ -37,116 +35,91 @@ public class Field extends Image {
         this.addListener(listener);
         this.setColor(baseColor);
     }
-
     private Set<Field> jumpedFields = new HashSet<>();
-
     public Field(float x, float y) {
-        this(new Vector2(x, y));
+        this(new Vector2(x,y));
     }
-
-    public void layoutChanged() {
-        size = Gdx.graphics.getHeight() / 35;
+    public void layoutChanged(){
+        size = Gdx.graphics.getHeight()/35;
         this.setBounds(pos.x * size, pos.y * size * 2, size, size);
     }
-
-    public void colorChanged() {
-        switch (colorChar) {
-            case NONE:
-                setColor(baseColor);
-                break;
-            case BLACK:
-                setColor(Color.BLACK);
-                break;
-            case BLUE:
-                setColor(Color.BLUE);
-                break;
-            case GREEN:
-                setColor(Color.GREEN);
-                break;
-            case LILA:
-                setColor(Color.PURPLE);
-                break;
-            case RED:
-                setColor(Color.RED);
-                break;
-            case YELLOW:
-                setColor(Color.YELLOW);
-                break;
-            case POSSIBLE:
-                setColor(possibleColor);
-                break;
+    public void colorChanged(){
+        switch(colorChar){
+            case NONE: setColor(baseColor); break;
+            case BLACK: setColor(Color.BLACK); break;
+            case BLUE: setColor(Color.BLUE); break;
+            case GREEN: setColor(Color.GREEN); break;
+            case LILA: setColor(Color.PURPLE); break;
+            case RED: setColor(Color.RED); break;
+            case YELLOW: setColor(Color.YELLOW); break;
+            case POSSIBLE: setColor(possibleColor); break;
         }
     }
-
     @Override
     public void act(float delta) {
         super.act(delta);
-        if (!posTemp.equals(pos))
+        if(!posTemp.equals(pos))
             layoutChanged();
-        if (colorCharTemp != colorChar)
+        if(colorCharTemp != colorChar)
             colorChanged();
         colorCharTemp = colorChar;
         posTemp = pos;
     }
-
-    public void clicked() {
-        if (besetzt()) {
+    public void clicked(){
+        if(besetzt()) {
             Play.getInstance().setSelectedField(this);
             clearPossibleFields();
             showAllWays();
         }
-        if (colorChar == POSSIBLE) {
+        if(colorChar == POSSIBLE) {
             Play.getInstance().getPlayers().get(Play.getInstance().getCurrentPlayerIndex()).makeMove(this);
             clearPossibleFields();
         }
-        if (colorChar == NONE)
+        if(colorChar == NONE)
             clearPossibleFields();
         //show all possible ways
 
         //if this is already a possible way, make a move
     }
-
     public void showAllWays() {
-        if (jumpCount > retry_threshold) return;
-        for (Field neighbour : neighbours) {
-            if (neighbour == null) continue; //ist das überhaupt ein nachbar?
-            if (!neighbour.besetzt()) //kann ich dorthin?
+        if(jumpCount>10_000) return;
+        for(Field neighbour : neighbours) {
+            if(neighbour == null) continue; //ist das überhaupt ein nachbar?
+            if(!neighbour.besetzt()) //kann ich dorthin?
                 neighbour.colorChar = POSSIBLE;
-            if (neighbour.besetzt()) //oder kann ich springen?
+            if(neighbour.besetzt()) //oder kann ich springen?
                 jump(neighbour);
         }
+        System.out.println(jumpCount);
         jumpCount = 0;
     }
-
     public void jump(Field neighbour) {
         if (jumpedFields.contains(neighbour)) {
             jumpedFields.clear();
             return;
         }
         jumpedFields.add(neighbour);
-        if (jumpCount > retry_threshold) return;
+        if(jumpCount>10_000) return;
         jumpCount++;
         LinkedList<Field> nextNeighbours = neighbour.neighbours; //die nachbarn von dem Feld, das besetzt ist
         Field toJump = nextNeighbours.get(neighbours.indexOf(neighbour)); //das feld auf das ich springe
-        if (toJump == null) return;
-        if (!toJump.besetzt()) { //einmal checken, ob das feld frei ist
+        if(toJump == null) return;
+        if(!toJump.besetzt()) { //einmal checken, ob das feld frei ist
             toJump.setColorChar(POSSIBLE); // dann sagen, dass ich dorthin kann
             toJump.afterJump(neighbour);
         }
     }
-
     public void afterJump(Field fromField) {
-        if (jumpCount > retry_threshold) return;
-        for (Field field : neighbours)
-            if (field != null) //ist das überhaupt ein nachbar?
-                if (field.besetzt()) //kann ich dort drüber springen?
-                    if (field != fromField) //Springe ich eh nicht zurück?
+        if(jumpCount>10_000) return;
+        for(Field field: neighbours)
+            if(field != null) //ist das überhaupt ein nachbar?
+                if(field.besetzt()) //kann ich dort drüber springen?
+                    if(field != fromField) //Springe ich eh nicht zurück?
                         jump(field);
     }
-
-    public static void clearPossibleFields() {
-        for (Field field : Play.getInstance().getBoard().getFields())
-            if (field.colorChar == POSSIBLE)
+    public static void clearPossibleFields(){
+        for(Field field : Play.getInstance().getBoard().getFields())
+            if(field.colorChar == POSSIBLE)
                 field.colorChar = NONE;
     }
 
@@ -156,14 +129,15 @@ public class Field extends Image {
 
     public void createNeighbours() {
 
-        if (!Play.getInstance().getBoard().isSquare()) {
+        if(!Play.getInstance().getBoard().isSquare()){
             upLeft = Play.getInstance().getBoard().getFieldFromPos(new Vector2(pos).add(-1, 1));
             upRight = Play.getInstance().getBoard().getFieldFromPos(new Vector2(pos).add(1, 1));
             downLeft = Play.getInstance().getBoard().getFieldFromPos(new Vector2(pos).add(-1, -1));
             downRight = Play.getInstance().getBoard().getFieldFromPos(new Vector2(pos).add(1, -1));
             left = Play.getInstance().getBoard().getFieldFromPos(new Vector2(pos).add(-2, 0));
             right = Play.getInstance().getBoard().getFieldFromPos(new Vector2(pos).add(2, 0));
-        } else {
+        }
+        else{
             up = Play.getInstance().getBoard().getFieldFromPos(new Vector2(pos).add(0, 1));
             down = Play.getInstance().getBoard().getFieldFromPos(new Vector2(pos).add(0, -1));
             downLeft = Play.getInstance().getBoard().getFieldFromPos(new Vector2(pos).add(-2, -1));
@@ -183,32 +157,18 @@ public class Field extends Image {
         neighbours.add(downRight);
         //create the neighbours of an field
     }
-
-    public boolean besetzt() {
+    public boolean besetzt(){
         return colorChar != NONE && colorChar != POSSIBLE;
     }
-
     //getter and setter
-    public Vector2 getPos() {
-        return pos;
-    }
-
-    public void setPos(Vector2 pos) {
-        this.pos = pos;
-    }
-
-    public char getColorChar() {
-        return colorChar;
-    }
-
-    public void setColorChar(char colorChar) {
-        this.colorChar = colorChar;
-    }
-
+    public Vector2 getPos() {return pos;}
+    public void setPos(Vector2 pos) {this.pos = pos;}
+    public char getColorChar() {return colorChar;}
+    public void setColorChar(char colorChar) {this.colorChar = colorChar;}
     //inner class
-    private class Listener extends ClickListener {
+    private class Listener extends ClickListener{
         public void clicked(InputEvent event, float x, float y) {
-            if (event.getListenerActor() instanceof Field)
+            if(event.getListenerActor() instanceof Field)
                 ((Field) event.getListenerActor()).clicked();
         }
     }
