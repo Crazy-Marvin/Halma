@@ -12,7 +12,7 @@ public class ResultScreen extends BaseScreen{
         create();
     }
     public void create(){
-        layout.add(player.getName() + getString("winMessage"));
+        layout.add(player.getName() + " hat gewonnen! \n GLÜCKWUNSCH \n drücke um zurück zu kommen");
         stage.addListener(listener);
     }
 
