@@ -1,251 +1,77 @@
 package app.halma.play;
 
+import java.util.LinkedList;
+
 public class WinnerChecker {
     public static int players = 2;
     public static boolean upperWin, lowerWin, upperLeftWin, upperRightWin, lowerLeftWin, lowerRightWin;
 
     public static boolean check(Board board) {
-        if (board.isSquare()) return squareCheck(board);
-        boolean winner = true;
-        if (players == 2) {
-            for (Field f : board.lower)
-                if (f.getColorChar() != Field.LILA) {
-                    winner = false;
-                    break;
-                }
+        // For both board types, our win conditions are:
+        // 1. If any bot region contains all red field, the human wins.
+        // 2. If the human's region (board.lower) has no red fields, the computer wins.
 
-            if (winner) return true;
+        // Reset win flags
+        upperWin = lowerWin = upperLeftWin = upperRightWin = lowerLeftWin = lowerRightWin = false;
 
-            winner = true;
-            for (Field f : board.upper)
-                if (f.getColorChar() != Field.RED) {
-                    winner = false;
-                    break;
-                }
-
-            return winner;
+        // Check bot regions for red invasion
+        if (containedBy(board.upper, Field.RED)) {
+            upperWin = true;
+            return true;
         }
-        if (players == 3) {
-            for (Field f : board.lowerLeft)
-                if (f.getColorChar() != Field.BLUE) {
-                    winner = false;
-                    break;
-                }
-
-            if (winner) return true;
-
-            winner = true;
-            for (Field f : board.lowerRight)
-                if (f.getColorChar() != Field.BLACK) {
-                    winner = false;
-                    break;
-                }
-
-            if (winner) return true;
-
-            winner = true;
-            for (Field f : board.upper)
-                if (f.getColorChar() != Field.RED) {
-                    winner = false;
-                    break;
-                }
-
-            return winner;
+        if (containedBy(board.upperLeft, Field.RED)) {
+            upperLeftWin = true;
+            return true;
         }
-        if (players == 4) {
-            for (Field f : board.lowerLeft)
-                if (f.getColorChar() != Field.BLUE) {
-                    winner = false;
-                    break;
-                }
-
-            if (winner) return true;
-
-            winner = true;
-            for (Field f : board.lowerRight)
-                if (f.getColorChar() != Field.BLACK) {
-                    winner = false;
-                    break;
-                }
-
-            if (winner) return true;
-
-            winner = true;
-            for (Field f : board.upperLeft)
-                if (f.getColorChar() != Field.YELLOW) {
-                    winner = false;
-                    break;
-                }
-
-            if (winner) return true;
-
-            winner = true;
-            for (Field f : board.upperRight)
-                if (f.getColorChar() != Field.GREEN) {
-                    winner = false;
-                    break;
-                }
-
-            return winner;
+        if (containedBy(board.upperRight, Field.RED)) {
+            upperRightWin = true;
+            return true;
         }
-        if (players == 5) {
-            for (Field f : board.lowerLeft)
-                if (f.getColorChar() != Field.BLUE) {
-                    winner = false;
-                    break;
-                }
-
-            if (winner) return true;
-
-            winner = true;
-            for (Field f : board.lowerRight)
-                if (f.getColorChar() != Field.BLACK) {
-                    winner = false;
-                    break;
-                }
-
-            if (winner) return true;
-
-            winner = true;
-            for (Field f : board.upperLeft)
-                if (f.getColorChar() != Field.YELLOW) {
-                    winner = false;
-                    break;
-                }
-
-            if (winner) return true;
-
-            winner = true;
-            for (Field f : board.upperRight)
-                if (f.getColorChar() != Field.GREEN) {
-                    winner = false;
-                    break;
-                }
-
-            if (winner) return true;
-
-            winner = true;
-            for (Field f : board.upper)
-                if (f.getColorChar() != Field.RED) {
-                    winner = false;
-                    break;
-                }
-
-            return winner;
+        if (containedBy(board.lowerLeft, Field.RED)) {
+            lowerLeftWin = true;
+            return true;
         }
-        if (players == 6) {
-            for (Field f : board.lowerLeft)
-                if (f.getColorChar() != Field.BLUE) {
-                    winner = false;
-                    break;
-                }
+        if (containedBy(board.lowerRight, Field.RED)) {
+            lowerRightWin = true;
+            return true;
+        }
 
-            if (winner) return true;
-
-            winner = true;
-            for (Field f : board.lowerRight)
-                if (f.getColorChar() != Field.BLACK) {
-                    winner = false;
-                    break;
-                }
-
-            if (winner) return true;
-
-            winner = true;
-            for (Field f : board.upperLeft)
-                if (f.getColorChar() != Field.YELLOW) {
-                    winner = false;
-                    break;
-                }
-
-            if (winner) return true;
-
-            winner = true;
-            for (Field f : board.upperRight)
-                if (f.getColorChar() != Field.GREEN) {
-                    winner = false;
-                    break;
-                }
-
-            if (winner) return true;
-
-            winner = true;
-            for (Field f : board.upper)
-                if (f.getColorChar() != Field.RED) {
-                    winner = false;
-                    break;
-                }
-
-            if (winner) return true;
-
-            winner = true;
-            for (Field f : board.lower)
-                if (f.getColorChar() != Field.LILA) {
-                    winner = false;
-                    break;
-                }
-
-            return winner;
+        // Check if player's designated region (board.lower) is completely invaded (no red)
+        if (isFull(board.lower) && !containsColor(board.lower, Field.RED)) {
+            lowerWin = true;
+            return true;
         }
         return false;
     }
 
-    private static boolean squareCheck(Board board) {
-        boolean winner = true;
-        if (players == 2) {
-            for (Field f : board.upperLeft)
-                if (f.getColorChar() != Field.YELLOW) {
-                    winner = false;
-                    break;
-                }
-
-            if (winner) return true;
-
-            winner = true;
-            for (Field f : board.lowerRight)
-                if (f.getColorChar() != Field.BLACK) {
-                    winner = false;
-                    break;
-                }
-
-            return winner;
+    // Helper method: returns true if all fields in the given region has the target color.
+    private static boolean containedBy(LinkedList<Field> region, char targetColor) {
+        for (Field f : region) {
+            if (f.getColorChar() != targetColor) {
+                return false;
+            }
         }
-        if (players == 4) {
-            for (Field f : board.upperLeft)
-                if (f.getColorChar() != Field.YELLOW) {
-                    winner = false;
-                    break;
-                }
+        return !region.isEmpty() && isFull(region);
+    }
 
-            if (winner) return true;
-
-            winner = true;
-            for (Field f : board.lowerRight)
-                if (f.getColorChar() != Field.BLACK) {
-                    winner = false;
-                    break;
-                }
-
-            if (winner) return true;
-
-            winner = true;
-            for (Field f : board.upperRight)
-                if (f.getColorChar() != Field.GREEN) {
-                    winner = false;
-                    break;
-                }
-
-            if (winner) return true;
-
-            winner = true;
-            for (Field f : board.lowerLeft)
-                if (f.getColorChar() != Field.BLUE) {
-                    winner = false;
-                    break;
-                }
-
-            return winner;
+    // Helper method: returns true if any field in the given region has the target color.
+    private static boolean containsColor(Iterable<Field> region, int targetColor) {
+        for (Field f : region) {
+            if (f.getColorChar() == targetColor)
+                return true;
         }
         return false;
     }
+
+
+    // Helper method: returns true if any field in the given region has the target color.
+    private static boolean isFull(Iterable<Field> region) {
+        for (Field f : region) {
+            if (f.getColorChar() == Field.NONE)
+                return false;
+        }
+        return true;
+    }
+
+    // (If needed, you can update squareCheck similarly; in this version the same logic applies.)
 }

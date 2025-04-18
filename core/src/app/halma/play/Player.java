@@ -24,14 +24,13 @@ public class Player {
     private Field currentField;
 
     public void play() {
-        System.out.println("play");
         turn = true;
         if (!isComputer) return;
         randomPossibleField();
-        randomField(possibleFields).clicked();
+        Field field = randomField(possibleFields);
+        if (field != null) field.clicked();
         possibleFields.clear();
         allColorFields.clear();
-        System.out.println("computer made move!");
     }
 
     private void randomColoredField() {
@@ -46,19 +45,18 @@ public class Player {
     private void randomPossibleField() {
         Board board = Play.getInstance().getBoard();
         do {
-            System.out.println("times run in schleife");
             randomColoredField();
             for (Field f : board.getFields())
                 if (f.getColorChar() == Field.POSSIBLE)
                     possibleFields.add(f);
         }
         while (possibleFields.isEmpty());
-        System.out.println(possibleFields.size());
     }
 
     private Field randomField(LinkedList<Field> fields) { //get random actor from list
         if (isComputer && fields == possibleFields) {
             LinkedList<Field> targetFields = getTargetFields();// Get target corner fields
+            if (targetFields != null && targetFields.isEmpty()) return null;
             // Get possible target location
             Field target = targetFields.get(0);
             for (Field f : targetFields) {
@@ -83,13 +81,7 @@ public class Player {
     }
 
     private LinkedList<Field> getTargetFields() {
-        if (color == Field.LILA) return Play.getInstance().getBoard().lower;
-        if (color == Field.RED) return Play.getInstance().getBoard().upper;
-        if (color == Field.BLACK) return Play.getInstance().getBoard().lowerRight;
-        if (color == Field.YELLOW) return Play.getInstance().getBoard().upperLeft;
-        if (color == Field.BLUE) return Play.getInstance().getBoard().lowerLeft;
-        if (color == Field.GREEN) return Play.getInstance().getBoard().upperRight;
-        return null;
+        return Play.getInstance().getBoard().lower;
     }
 
     public void makeMove(Field toMove) {
