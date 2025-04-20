@@ -16,11 +16,11 @@ android {
         exclude 'META-INF/robovm/ios/robovm.xml'
     }
     defaultConfig {
-        applicationId "app.halma"
-        minSdkVersion 14
+        namespace "app.halma"
+        minSdkVersion 19
         targetSdkVersion 35
-        versionCode 14
-        versionName "14.0"
+        versionCode 15
+        versionName "15.0"
     }
     buildTypes {
         release {

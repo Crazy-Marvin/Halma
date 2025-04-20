@@ -4,13 +4,15 @@ buildscript {
         mavenLocal()
         mavenCentral()
         gradlePluginPortal()
-        maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
+        maven { 
+            url = uri("https://oss.sonatype.org/content/repositories/snapshots/") 
+        }
         google()
     }
     dependencies {
-        classpath 'org.wisepersist:gwt-gradle-plugin:1.1.16'
-        classpath 'org.gretty:gretty:3.0.8'
-        classpath 'com.android.tools.build:gradle:7.4.2'
+        classpath 'org.wisepersist:gwt-gradle-plugin:1.1.19'
+        classpath 'org.gretty:gretty:4.1.6'
+        classpath 'com.android.tools.build:gradle:8.9.0'
 
     }
 }
@@ -30,9 +32,15 @@ allprojects {
         mavenCentral()
         google()
         gradlePluginPortal()
-        maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
-        maven { url "https://oss.sonatype.org/content/repositories/releases/" }
-        maven { url "https://jitpack.io" }
+        maven {
+            url = uri("https://oss.sonatype.org/content/repositories/snapshots/")
+        }
+        maven {
+            url = uri("https://oss.sonatype.org/content/repositories/releases/")
+        }
+        maven {
+            url = uri("https://jitpack.io")
+        }
     }
 }
 
@@ -83,7 +91,6 @@ project(":html") {
 
 project(":core") {
     apply plugin: "java-library"
-
 
     dependencies {
         api "com.badlogicgames.gdx:gdx:$gdxVersion"
