@@ -1,5 +1,5 @@
 gwt {
-    gwtVersion='2.8.2' // Should match the gwt version used for building the gwt backend
+    gwtVersion='2.10.0' // Should match the gwt version used for building the gwt backend
     maxHeapSize="1G" // Default 256m is not enough for gwt compiler. GWT is HUNGRY
     minHeapSize="1G"
 
@@ -67,7 +67,7 @@ task dist(dependsOn: [clean, compileGwt]) {
         copy {
             from "webapp"
             into "build/dist"
-            }
+        }
         copy {
             from "war"
             into "build/dist"

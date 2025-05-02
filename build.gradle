@@ -4,15 +4,15 @@ buildscript {
         mavenLocal()
         mavenCentral()
         gradlePluginPortal()
-        maven { 
-            url = uri("https://oss.sonatype.org/content/repositories/snapshots/") 
+        maven {
+            url = uri("https://oss.sonatype.org/content/repositories/snapshots/")
         }
         google()
     }
     dependencies {
-        classpath 'org.wisepersist:gwt-gradle-plugin:1.1.19'
+        classpath 'org.wisepersist:gwt-gradle-plugin:1.1.16'
         classpath 'org.gretty:gretty:4.1.6'
-        classpath 'com.android.tools.build:gradle:8.9.0'
+        classpath 'com.android.tools.build:gradle:8.4.2'
 
     }
 }
