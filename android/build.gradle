@@ -1,4 +1,5 @@
 android {
+    namespace "app.halma"
     compileSdk 35
     sourceSets {
         main {
@@ -16,7 +17,7 @@ android {
         exclude 'META-INF/robovm/ios/robovm.xml'
     }
     defaultConfig {
-        namespace "app.halma"
+        applicationId "app.halma"
         minSdkVersion 19
         targetSdkVersion 35
         versionCode 15
