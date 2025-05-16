@@ -1,0 +1,4 @@
+- 适配安卓13（谷歌要求）
+
+欢迎在 https://github.com/Crazy-Marvin/Halma 提交问题反馈，或在 https://hosted.weblate.org/engage/halma/ 参与翻译。
+感谢所有贡献者！😘

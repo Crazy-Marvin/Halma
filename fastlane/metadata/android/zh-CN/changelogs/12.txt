@@ -1,0 +1,6 @@
+- 更新“关于”页面 ℹ️
+- 优化电脑对战体验 🤖
+- 新增可选错误与性能监控功能 💡
+
+欢迎在 https://github.com/Crazy-Marvin/Halma 提交问题反馈，或在 https://hosted.weblate.org/engage/halma/ 参与翻译。
+感谢所有贡献者！😘
