@@ -1,0 +1,7 @@
+- 优化游戏逻辑 🧠
+- 修复漏洞 🐛
+- 更新多语言翻译 🗺️
+
+特别感谢所有贡献者和翻译人员，尤其是Mujahid！😘
+欢迎在 https://github.com/Crazy-Marvin/Halma 提交问题反馈，或在 https://hosted.weblate.org/engage/halma/ 参与翻译。🚀
+感谢所有贡献者！😘
