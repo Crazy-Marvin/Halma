@@ -1,6 +1,7 @@
+- Improved game logic 🧠
 - Исправлены ошибки 🐛
 - Обновленные переводы 🗺️
 
+A huge thank you to all contributors and translators, especially Mujahid. 😘
 Пожалуйста, не стесняйтесь открывать проблемы на https://github.com/Crazy-Marvin/Halma и помогать с переводами на https://hosted.weblate.org/engage/halma/.
-
 Большое спасибо всем участникам! 😘
