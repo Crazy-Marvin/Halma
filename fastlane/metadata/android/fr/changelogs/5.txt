@@ -1,1 +1,1 @@
-- Amélioration des interfaces
+- Amélioration de l'interface utilisateur

@@ -1,0 +1,1 @@
+- Passe à une nouvelle fonte supportant les caractères « spéciaux » de certaines langues telles que l'ukrainien, le chinois, le japonais, l'ourdou, l'allemand (ä, ü, ö, ß...), ainsi que les langues indiennes etc. 🎨

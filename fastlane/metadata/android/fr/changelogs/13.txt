@@ -1,0 +1,4 @@
+- Mise à jour des traductions 🗺️
+
+Sentez-vous le bienvenue pour l'ouverture de problèmes à l'adresse https://github.com/Crazy-Marvin/Halma et à l'aide aux traductions à l'adresse https://hosted.weblate.org/engage/halma/.
+Merci beaucoup à tous les contributeurs ! 😘

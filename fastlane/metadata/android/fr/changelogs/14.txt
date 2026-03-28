@@ -1,0 +1,6 @@
+- Amélioration de la logique du jeu 🧠
+- Correction de bugs 🐛
+- Mise à jour des traductions 🗺️
+
+Un énorme merci à tous les contributeurices et traducteurices, en particulier à Mujahid ! 😘
+Sentez-vous le bienvenue pour l'ouverture de problèmes à l'adresse https://github.com/Crazy-Marvin/Halma et à l'aide aux traductions à l'adresse https://hosted.weblate.org/engage/halma/.
