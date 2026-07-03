@@ -1,0 +1,6 @@
+- Mise à jour de la page À propos ℹ️
+- Optimise le jeu de l'ordinateur 🤖
+- Erreur optionnelle & surveillance des performances 💡
+
+Sentez-vous le bienvenue pour l'ouverture de problèmes à l'adresse https://github.com/Crazy-Marvin/Halma et à l'aide aux traductions à l'adresse https://hosted.weblate.org/engage/halma/.
+Merci beaucoup à tous les contributeurs ! 😘

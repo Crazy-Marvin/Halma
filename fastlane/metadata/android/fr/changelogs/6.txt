@@ -1,2 +1,5 @@
-- Mise à jour des traductions
-- Petites améliorations internes
+- Utilise I18NBundle pour les chaînes de caractères (#30)
+- Régénère le projet pour libGDX 1.11.0 (#36)
+- Mises à jour des dépendences
+- Suppression de parties inutilisées
+- De nombreuses autres améliorations
